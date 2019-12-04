@@ -36,7 +36,7 @@ public class Disease {
     @JoinColumn(name = "DOCTOR_ID", insertable = true)
     @JsonManagedReference
     private Doctor doctor;
-
+//ttt
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Type.class)
     @JoinColumn(name = "TYPE_ID", insertable = true)
     @JsonManagedReference
