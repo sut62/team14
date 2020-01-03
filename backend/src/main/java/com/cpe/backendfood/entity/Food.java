@@ -1,7 +1,6 @@
-package com.cpe.food.entity;
+package com.cpe.backendfood.entity;
 
 import lombok.*;
-
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,21 +17,20 @@ import javax.persistence.FetchType;
 @Entity
 @NoArgsConstructor
 @Table(name="FOOD")
-public class food {
+public class Food {
 
     @Id
     @SequenceGenerator(name="food_seq",sequenceName="food_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="food_seq")
-    @Column(name = "id", unique = true, nullable = true)
+    @Column(name = "Food_ID", unique = true, nullable = true)
     private @NonNull Long id;
     private @NonNull String name;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity =Foodtype.class)
-    @JoinColumn(name = "id", insertable = true)
-    private Employee typeby;
+    @JoinColumn(name = "FoodtypeID", insertable = true)
+    private Foodtype typeby;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Meal.class)
-    @JoinColumn(name = "id", insertable = true)
-    private Cardtype timeby;
-
+    @JoinColumn(name = "MealID", insertable = true)
+    private Meal mealby;
 }
