@@ -44,7 +44,7 @@ public class PatientBed {
 
    @ManyToOne(fetch = FetchType.EAGER,targetEntity = PatientZone.class)
    @JoinColumn(name = "ZONE_ID",insertable = true)
-   private  PatientZone atZone; //is in PatientZone  PatientZone
+   private  PatientZone atZone; //is in PatientZone 
     
 
    @ManyToOne(fetch = FetchType.EAGER, targetEntity = PatientRoom.class)
