@@ -18,11 +18,8 @@ import java.util.Collection;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.orderfood.entity.FoodOrder;
 import com.cpe.patientBed.entity.PatientBed;
-<<<<<<< HEAD
-import com.cpe.DiseasePackage.entity.Disease;
-=======
 import com.cpe.backendfood.entity.Food;
->>>>>>> bec52d27e87c38a057c144dd690aced394ee2f30
+import com.cpe.DiseasePackage.entity.Disease;
 
 @Data
 @Entity
