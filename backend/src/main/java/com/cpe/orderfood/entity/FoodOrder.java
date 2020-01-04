@@ -18,11 +18,12 @@ import javax.persistence.GenerationType;
 
 import com.cpe.backendfood.entity.Food;
 import com.cpe.personnel.entity.Personnel;
+import com.cpe.register.entity.Register;
 
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name="FOOD_ORDER")
+@Table(name="FOODORDER")
 public class FoodOrder {
     @Id
     @SequenceGenerator(name="FOODORDER_SEQ",sequenceName="FOODORDER_SEQ")
@@ -38,4 +39,8 @@ public class FoodOrder {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
     private Personnel orderBy;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Register.class)
+    @JoinColumn(name = "register_ID", insertable = true)
+    private Register patient;
 }
