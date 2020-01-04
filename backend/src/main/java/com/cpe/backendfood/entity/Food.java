@@ -15,6 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 
 import com.cpe.orderfood.entity.FoodOrder;
+import com.cpe.personnel.entity.Personnel;
 
 
 @Data
@@ -40,4 +41,8 @@ public class Food {
 
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<FoodOrder> order;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
+    @JoinColumn(name = "PERSONNEL_ID", insertable = true)
+    private Personnel createdBy;
 }
