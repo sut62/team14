@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.sql.Date;
 import java.util.Collection;
 import com.cpe.personnel.entity.Personnel;
+import com.cpe.orderfood.entity.FoodOrder;
 
 @Data
 @Entity
@@ -47,5 +48,8 @@ public class Personnel {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Educationlevel.class)
     @JoinColumn(name = "EDUCATIONLEVEL_ID", insertable = true)
     private Educationlevel level;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private Collection<FoodOrder> order;
 
 }
