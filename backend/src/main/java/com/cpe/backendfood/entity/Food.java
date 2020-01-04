@@ -44,5 +44,5 @@ public class Food {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private Personnel createdBy;
+    private Personnel createdby;
 }
