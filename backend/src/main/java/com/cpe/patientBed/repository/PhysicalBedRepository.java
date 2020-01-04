@@ -8,5 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface PhysicalBedRepository extends JpaRepository<PhysicalBed, Long> {
-	PhysicalBed findById(long physBed_id);//search at PhysicalBed Entity
+	PhysicalBed findById(long physBed_id);//search id at PhysicalBed Entity
 }
