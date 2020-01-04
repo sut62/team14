@@ -23,11 +23,13 @@ import java.net.URLDecoder;
 import com.cpe.patientBed.entity.PatientBed;
 import com.cpe.patientBed.entity.PatientRoom;
 import com.cpe.patientBed.entity.PatientZone;
+//import personnel from sopon
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.patientBed.entity.PhysicalBed;
 import com.cpe.patientBed.repository.PatientBedRepository;
 import com.cpe.patientBed.repository.PatientRoomRepository;
 import com.cpe.patientBed.repository.PatientZoneRepository;
+//import personnel from sopon
 import com.cpe.personnel.repository.PersonnelRepository;
 import com.cpe.patientBed.repository.PhysicalBedRepository;
 
