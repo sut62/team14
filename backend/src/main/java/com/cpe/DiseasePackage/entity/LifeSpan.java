@@ -25,13 +25,11 @@ public class LifeSpan {
 	
 	@Column(name="LIFESPAN_ID",unique = true, nullable = true)
 	private @NonNull Long id;
-	
 	private @NonNull String age;
 
 	public void setAge(String age){
 		this.age = age;
 	}
-	
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "lifespan")
 	private Collection<Disease> disease ;
 }
