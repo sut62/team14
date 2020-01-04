@@ -18,7 +18,11 @@ import java.util.Collection;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.orderfood.entity.FoodOrder;
 import com.cpe.patientBed.entity.PatientBed;
+<<<<<<< HEAD
+import com.cpe.DiseasePackage.entity.Disease;
+=======
 import com.cpe.backendfood.entity.Food;
+>>>>>>> bec52d27e87c38a057c144dd690aced394ee2f30
 
 @Data
 @Entity
@@ -54,6 +58,8 @@ public class Personnel {
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<FoodOrder> order;
 
+    @OneToMany(fetch = FetchType.EAGER,mappedBy="personnel")
+	private Collection<Disease> disease;
     
     @OneToMany(fetch = FetchType.EAGER)
     //mappedBy  = "createdBy"
