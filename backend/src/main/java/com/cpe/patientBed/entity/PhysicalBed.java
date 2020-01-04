@@ -33,7 +33,7 @@ public class PhysicalBed {
 
     @OneToMany(fetch = FetchType.EAGER)
     // mappedBy  = "physicalBed"
-    private Collection<PatientBed> havePhysical; //map from PatientBed - havePhysical is in PatientBed
+    private Collection<PatientBed> havePhysical; //map from   PatientBed - havePhysical is in PatientBed
 
    public String setName(String physBed_name){
 		this.physBed_name=physBed_name;

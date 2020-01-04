@@ -38,7 +38,7 @@ public class PatientBed {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private Personnel createdBy; //is in Personnel
+    private Personnel createdBy; //createdBy is in Personnel
 
 
 
