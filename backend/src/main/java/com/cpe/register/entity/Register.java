@@ -9,12 +9,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-
+import java.util.Collection;
+import javax.persistence.OneToMany;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.cpe.register.entity.Register;
+import com.cpe.orderfood.entity.FoodOrder;
 
 @Data
 @Entity
@@ -40,4 +41,7 @@ public class Register {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Bloodtype.class)
     @JoinColumn(name = "Bloodtype_ID", insertable = true)
     private Bloodtype bloodtypename;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private Collection<FoodOrder> order;
 }
