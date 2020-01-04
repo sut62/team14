@@ -17,7 +17,7 @@ import java.sql.Date;
 import java.util.Collection;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.orderfood.entity.FoodOrder;
-
+import com.cpe.patientBed.entity.PatientBed;
 @Data
 @Entity
 @NoArgsConstructor
@@ -51,5 +51,10 @@ public class Personnel {
 
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<FoodOrder> order;
+
+    
+    @OneToMany(fetch = FetchType.EAGER)
+    //mappedBy  = "createdBy"
+    private Collection<PatientBed> add;
 
 }
