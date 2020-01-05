@@ -6,6 +6,8 @@ import com.cpe.patientBed.entity.*;
 import com.cpe.patientBed.repository.*;
 import com.cpe.personnel.entity.*;
 import com.cpe.personnel.repository.*;
+import com.cpe.register.entity.*;
+import com.cpe.register.repository.*;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +28,7 @@ public class BackendApplication {
 	
     ApplicationRunner init(TypeRepository typeRepository,LifeSpanRepository lifespanRepository 
 	,PatientRoomRepository patientRoomRepository,PatientZoneRepository patientZoneRepository, PhysicalBedRepository physicalBedRepository,
-	PositionRepository positionRepository, MaritalstatusRepository maritalstatusRepository, EducationlevelRepository educationlevelRepository) {
+	PositionRepository positionRepository, MaritalstatusRepository maritalstatusRepository, EducationlevelRepository educationlevelRepository,GenderRepository genderRepository,BloodtypeRepository bloodtypeRepository) {
 		return args -> {
 
 			Stream.of("วัยทารก", "วัยเด็ก", "วัยรุ่น", "วัยผู้ใหญ่" ,"วัยชรา").forEach(age -> {
@@ -71,6 +73,18 @@ public class BackendApplication {
 				educationlevel.setEducationlevel_name(educationlevel_name);
 				educationlevelRepository.save(educationlevel);
 			});
+			Stream.of("Man", "Female").forEach(gen_name -> {
+				Gender gender = new Gender();
+				gender.setGen_name(gen_name);
+				genderRepository.save(gender);
+			});
+			Stream.of("O", "A", "B","AB").forEach(blood_name -> {
+				Bloodtype bloodtype = new Bloodtype();
+				bloodtype.setBlood_name(blood_name);
+				bloodtypeRepository.save(bloodtype);
+			});
+			genderRepository.findAll().forEach(System.out::println);
+			bloodtypeRepository.findAll().forEach(System.out::println);
 			positionRepository.findAll().forEach(System.out::println);
 			maritalstatusRepository.findAll().forEach(System.out::println);
 			educationlevelRepository.findAll().forEach(System.out::println);
