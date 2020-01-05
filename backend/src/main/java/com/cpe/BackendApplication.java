@@ -22,7 +22,8 @@ public class BackendApplication {
 	@Bean
 	
     ApplicationRunner init(TypeRepository typeRepository,LifeSpanRepository lifespanRepository 
-    ,PatientRoomRepository patientRoomRepository,PatientZoneRepository patientZoneRepository, PhysicalBedRepository physicalBedRepository) {
+	,PatientRoomRepository patientRoomRepository,PatientZoneRepository patientZoneRepository, PhysicalBedRepository physicalBedRepository,
+	PositionRepository positionRepository, MaritalstatusRepository maritalstatusRepository, EducationlevelRepository educationlevelRepository) {
 		return args -> {
 
 			Stream.of("วัยทารก", "วัยเด็ก", "วัยรุ่น", "วัยผู้ใหญ่" ,"วัยชรา").forEach(age -> {
@@ -52,7 +53,24 @@ public class BackendApplication {
 				physicalBed.setName(physBed_name); // set ชื่อ (physBed_name) ให้ Object ชื่อ physicalBed
 				physicalBedRepository.save(physicalBed); // บันทึก Objcet ชื่อ physicalBed
 			});
-
+			Stream.of("Doctor", "Nurse","Nutritionost","Housekeeper","Chef").forEach(position_name -> {
+				Position position = new Position();
+				position.setPosition_name(position_name);
+				positionRepository.save(position);
+			});
+			Stream.of("Single", "Married", "Windowed", "Divorced","	Separated").forEach(maritalstatus_name -> {
+				Maritalstatus maritalstatus = new Maritalstatus();
+				maritalstatus.setMaritalstatus_name(maritalstatus_name);
+				maritalstatusRepository.save(maritalstatus);
+			});
+			Stream.of("Primary", "Secondary", "Vocational ","University").forEach(educationlevel_name -> {
+				Educationlevel educationlevel = new Educationlevel();
+				educationlevel.setEducationlevel_name(educationlevel_name);
+				educationlevelRepository.save(educationlevel);
+			});
+			positionRepository.findAll().forEach(System.out::println);
+			maritalstatusRepository.findAll().forEach(System.out::println);
+			educationlevelRepository.findAll().forEach(System.out::println);
 		};
 	}
 
