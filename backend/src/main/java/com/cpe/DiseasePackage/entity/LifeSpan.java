@@ -30,6 +30,6 @@ public class LifeSpan {
 	public void setAge(String age){
 		this.age = age;
 	}
-	@OneToMany(fetch = FetchType.EAGER,mappedBy = "lifespan")
+	@OneToMany(fetch = FetchType.EAGER)
 	private Collection<Disease> disease ;
 }
