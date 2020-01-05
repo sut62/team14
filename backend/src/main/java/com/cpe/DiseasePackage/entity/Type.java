@@ -32,6 +32,6 @@ public class Type {
          this.typename=typename;
      }
 
-    @OneToMany(fetch = FetchType.EAGER ,mappedBy="type")
+    @OneToMany(fetch = FetchType.EAGER)
     private Collection<Disease> disease;
 }

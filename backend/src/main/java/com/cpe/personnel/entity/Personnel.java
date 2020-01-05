@@ -55,7 +55,7 @@ public class Personnel {
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<FoodOrder> order;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy="personnel")
+    @OneToMany(fetch = FetchType.EAGER)
 	private Collection<Disease> disease;
     
     @OneToMany(fetch = FetchType.EAGER)
