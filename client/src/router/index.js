@@ -3,8 +3,8 @@ import Router from 'vue-router';
 import Personnel from '../components/Personnel';
 import order from '../components/FoodOrder';
 import Food from '../components/Food';
-
 import disease from '../components/newDisease';
+import Register from '../components/Register';
 
 Vue.use(Router);
 
@@ -24,9 +24,12 @@ export default new Router({
             component: disease
        },
        {
-        
             path: '/Food',
             component: Food
+        },
+        {
+            path: '/Regis',
+            component: Register
         },
     ]
 });
