@@ -8,7 +8,7 @@ import com.cpe.personnel.entity.Maritalstatus;
 import com.cpe.personnel.repository.MaritalstatusRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 public class MaritalstatusController {
 
