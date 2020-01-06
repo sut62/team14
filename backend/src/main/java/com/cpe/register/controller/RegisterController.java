@@ -62,7 +62,8 @@ public class RegisterController {
     public Collection<Register> Registers() {
         return registerRepository.findAll().stream().collect(Collectors.toList());
     }
-    @PostMapping("/register/{personnelid}/{addname}/{addlastname}/{addage}/{addtelephone}/{bloodtype_id}/{gender_id}/{id}/{patientBed_id}")
+    //ใส่พาท
+    @PostMapping("/register{personnel_id}/{addname}/{addlastname}/{addage}/{addtelephone}/{bloodtype_id}/{gender_id}/{id}/{patientBed_id}")
     public Register newRegister(final Register newRegister,
     @PathVariable final String addname,
     @PathVariable final String addlastname,

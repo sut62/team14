@@ -242,7 +242,7 @@ export default {
     saveRegister() {
       http
         .post(
-          "/register/"+
+          "/register"+
            this.register.personnelID +
             "/" +
             this.register.userName +
