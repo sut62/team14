@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Personnel from '../components/Personnel';
 import order from '../components/FoodOrder';
 import Food from '../components/Food';
+import PatientBed from '../components/PatientBed';
 import disease from '../components/newDisease';
 import Register from '../components/Register';
 
@@ -31,5 +32,10 @@ export default new Router({
             path: '/Regis',
             component: Register
         },
+        {
+            path: '/bed',
+            component: PatientBed
+
+        }
     ]
 });
