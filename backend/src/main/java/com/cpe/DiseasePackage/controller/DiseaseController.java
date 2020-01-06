@@ -22,7 +22,7 @@ import java.net.URLDecoder;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.personnel.repository.PersonnelRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 public class DiseaseController {
     @Autowired
