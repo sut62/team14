@@ -9,6 +9,14 @@ import com.cpe.personnel.repository.*;
 import com.cpe.register.entity.*;
 import com.cpe.register.repository.*;
 
+import com.cpe.backendfood.entity.Foodtype;
+import com.cpe.backendfood.entity.Meal;
+
+
+
+import com.cpe.backendfood.repository.FoodtypeRepository;
+import com.cpe.backendfood.repository.MealRepository;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.ApplicationRunner;
@@ -28,7 +36,9 @@ public class BackendApplication {
 	
     ApplicationRunner init(TypeRepository typeRepository,LifeSpanRepository lifespanRepository 
 	,PatientRoomRepository patientRoomRepository,PatientZoneRepository patientZoneRepository, PhysicalBedRepository physicalBedRepository,
-	PositionRepository positionRepository, MaritalstatusRepository maritalstatusRepository, EducationlevelRepository educationlevelRepository,GenderRepository genderRepository,BloodtypeRepository bloodtypeRepository) {
+	PositionRepository positionRepository, MaritalstatusRepository maritalstatusRepository, EducationlevelRepository educationlevelRepository,GenderRepository genderRepository,BloodtypeRepository bloodtypeRepository,
+	FoodtypeRepository foodtypeRepository, MealRepository mealRepository
+	) {
 		return args -> {
 
 			Stream.of("วัยทารก", "วัยเด็ก", "วัยรุ่น", "วัยผู้ใหญ่" ,"วัยชรา").forEach(age -> {
@@ -83,11 +93,27 @@ public class BackendApplication {
 				bloodtype.setBlood_name(blood_name);
 				bloodtypeRepository.save(bloodtype);
 			});
+
+			Stream.of("อาหารอ่อน", "อาหารน้ำ").forEach(type -> {
+				Foodtype foodtype = new Foodtype(); 
+				foodtype.setType(type);
+				foodtypeRepository.save(foodtype);
+			});
+				Stream.of("เช้า", "เย็น").forEach(mealtype -> {
+				Meal meal = new Meal(); 
+				meal.setMealtype(mealtype); 
+				mealRepository.save(meal); 
+			});
+
+
 			genderRepository.findAll().forEach(System.out::println);
 			bloodtypeRepository.findAll().forEach(System.out::println);
 			positionRepository.findAll().forEach(System.out::println);
 			maritalstatusRepository.findAll().forEach(System.out::println);
 			educationlevelRepository.findAll().forEach(System.out::println);
+
+			foodtypeRepository.findAll().forEach(System.out::println);
+			mealRepository.findAll().forEach(System.out::println);
 		};
 	}
 
