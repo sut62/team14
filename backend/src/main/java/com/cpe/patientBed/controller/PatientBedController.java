@@ -67,7 +67,7 @@ public class PatientBedController {
     @PathVariable long physBed_id,
     @PathVariable String detail) {
    
-//search
+//search id
         Personnel createdBy = personnelRepository.findById(personal_id);
         PatientZone atZone = patientZoneRepository.findById(zone_id);
         PatientRoom atRoom = patientRoomRepository.findById(room_id);
