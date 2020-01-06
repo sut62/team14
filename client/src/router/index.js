@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router';
 import Personnel from '../components/Personnel';
+import order from '../components/FoodOrder';
 
 Vue.use(Router);
 
@@ -11,6 +12,10 @@ export default new Router({
             path: '/per',
             component: Personnel
         },
+        {
+             path: '/order',
+             component: order
+        }
         
     ]
 });
