@@ -6,7 +6,7 @@
     <v-layout text-center wrap>
       <v-flex mb-4>
         <br />
-        <h1 class="display-2 font-weight-bold mb-3">ระบบจัดการโรงภาพยนตร์</h1>
+        <h1 class="display-2 font-weight-bold mb-3">ระบบสั่งอาหารให้ผู้ป่าวย</h1>
       </v-flex>
     </v-layout>
     </v-card>
@@ -39,7 +39,7 @@
                   outlined
                   v-model="orderFood.bedId"
                   :items="patient"
-                  item-text="name"
+                  item-text="addname"
                   item-value="id"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
@@ -55,7 +55,7 @@
                        outlined
                        v-model="orderFood.emId"
                        :items="employee"
-                       item-text="name"
+                       item-text="firstname"
                        item-value="id"
                        :rules="[(v) => !!v || 'Item is required']"
                        required

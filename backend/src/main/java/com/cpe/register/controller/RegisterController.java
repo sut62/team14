@@ -75,11 +75,11 @@ public class RegisterController {
     @PathVariable final long patientBed_id
     ){            
 
-        final Bloodtype   bloodtypename   = bloodtypeRepository.findById(bloodtype_id);                   
-        final Gender      gendername      = genderRepository.findById(gender_id);  
+        final Bloodtype   bloodtypename   = bloodtypeRepository.findById(bloodtype_id);
+        final Gender      gendername      = genderRepository.findById(gender_id);
         final Personnel   createdby       = personnelRepository.findById(personnel_id);
-        final Disease     desname         = diseaseRepository.findById(id);  
-        final PatientBed  patname         = patientBedRepository.findById(patientBed_id); 
+        final Disease     desname         = diseaseRepository.findById(id);
+        final PatientBed  patname         = patientBedRepository.findById(patientBed_id);
 
     newRegister.setAddname(addname);
     newRegister.setAddlastname(addlastname);
