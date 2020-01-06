@@ -6,7 +6,7 @@
     <v-layout text-center wrap>
       <v-flex mb-4>
         <br />
-        <h1 class="display-2 font-weight-bold mb-3">ระบบสั่งอาหารให้ผู้ป่าวย</h1>
+        <h1 class="display-2 font-weight-bold mb-3">ระบบสั่งอาหารให้ผู้ป่วย</h1>
       </v-flex>
     </v-layout>
     </v-card>
