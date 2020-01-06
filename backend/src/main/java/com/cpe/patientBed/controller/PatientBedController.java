@@ -72,6 +72,7 @@ public class PatientBedController {
         PatientZone atZone = patientZoneRepository.findById(zone_id);
         PatientRoom atRoom = patientRoomRepository.findById(room_id);
         PhysicalBed physicalBed = physicalBedRepository.findById(physBed_id);
+        String show =  "  " +atRoom.getRoom_name()+" - "+ atZone.getZone_name();
 
 //set
 newPatientBed.setCreatedBy(createdBy);
@@ -79,6 +80,7 @@ newPatientBed.setAtZone(atZone);
 newPatientBed.setAtRoom(atRoom);
 newPatientBed.setPhysicalBed(physicalBed);
 newPatientBed.setDetail(detail);
+newPatientBed.setShow(show);
 
 //save
     return patientBedRepository.save(newPatientBed); 

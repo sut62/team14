@@ -51,7 +51,7 @@ public class Register {
     private Personnel createdby;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Disease.class)
-    @JoinColumn(name = "ID", insertable = true)
+    @JoinColumn(name = "DISEASE_ID", insertable = true)
     private Disease desname;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = PatientBed.class)

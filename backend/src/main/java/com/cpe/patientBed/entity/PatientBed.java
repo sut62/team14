@@ -56,5 +56,6 @@ public class PatientBed {
     private PhysicalBed physicalBed; 
 
     private @NonNull String detail;
+    private @NonNull String show;
 
 }
