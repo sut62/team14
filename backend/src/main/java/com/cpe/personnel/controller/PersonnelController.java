@@ -63,7 +63,7 @@ public class PersonnelController {
         return personnelRepository.findDoctorByPersonnel(id,password);
     }
     @GetMapping("/loginNurse/{id}/{password}")
-    public Personnel loginDoctor(@PathVariable("id") long id, @PathVariable("password") String password) {
+    public Personnel loginNurse(@PathVariable("id") long id, @PathVariable("password") String password) {
         return personnelRepository.findNurseByPersonnel(id,password);
     }
     @PostMapping("/personnel/{addfirstname}/{addlastname}/{addtelephone}/{addbirthday}/{maritalstatus_id}/{position_id}/{educationlevel_id}")
