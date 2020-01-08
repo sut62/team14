@@ -54,6 +54,18 @@ public class PersonnelController {
     public Collection<Personnel> Personnels() {
         return personnelRepository.findAll().stream().collect(Collectors.toList());
     }
+    @GetMapping("/loginNutritionost/{id}/{password}")
+    public Personnel loginNutritionost(@PathVariable("id") long id, @PathVariable("password") String password) {
+        return personnelRepository.findNutritionostByPersonnel(id,password);
+    }
+    @GetMapping("/loginDoctor/{id}/{password}")
+    public Personnel loginDoctor(@PathVariable("id") long id, @PathVariable("password") String password) {
+        return personnelRepository.findDoctorByPersonnel(id,password);
+    }
+    @GetMapping("/loginNurse/{id}/{password}")
+    public Personnel loginDoctor(@PathVariable("id") long id, @PathVariable("password") String password) {
+        return personnelRepository.findNurseByPersonnel(id,password);
+    }
     @PostMapping("/personnel/{addfirstname}/{addlastname}/{addtelephone}/{addbirthday}/{maritalstatus_id}/{position_id}/{educationlevel_id}")
     public Personnel newPersonnel(Personnel newPersonnel,
     @PathVariable String addfirstname,
