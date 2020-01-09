@@ -10,6 +10,8 @@ import Longinregis from '../components/LonginMedical records';
 import Home from '../components/Home';
 import Loginnutr from '../components/LoginNutritionost';
 import nutr from '../components/Nutritionost';
+import nurselogin from '../components/NurseLogin';
+import nurse from '../components/Nurse';
 
 Vue.use(Router);
 
@@ -51,6 +53,12 @@ export default new Router({
         ,{
             path: '/nutr',
             component: nutr
+        },{
+            path: '/nurselogin',
+            component: nurselogin
+        },{
+            path: '/nurse',
+            component: nurse
         }
         ,{
             path: '/longinregis',

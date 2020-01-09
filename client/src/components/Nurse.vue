@@ -1,3 +1,4 @@
+
 <template >
   <v-container >
     <v-card
@@ -8,7 +9,7 @@
       <br />
     <v-layout text-center wrap>
       <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">สำหรับพนักงาน</h1>
+        <h1 class="display-2 font-weight-bold mb-3">สำหรับพยาบาล</h1>
       </v-flex>
     </v-layout>
 
@@ -21,13 +22,7 @@
 
         <v-row justify="center">
         <b-button>
-        <router-link to="/Food"><v-btn class="ma-2" outlined color="blue darken-1">Food</v-btn></router-link>
-        </b-button>
-
-
-
-        <b-button>
-        <router-link to="/order"><v-btn style="margin-left: 15px;" class="ma-2" outlined color="blue darken-1">FoodOrder</v-btn></router-link>
+        <router-link to="/bed"><v-btn class="ma-2" outlined color="blue darken-1">Hospital Bed</v-btn></router-link>
         </b-button>
         </v-row>
         <br />
