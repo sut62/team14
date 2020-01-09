@@ -4,12 +4,10 @@
       <div>
        <v-row justify="center">
         <v-btn @click="home" class="ma-2" outlined color="black">Home</v-btn>
-        <v-btn @click="food" class="ma-2" outlined color="orange">Food</v-btn>
         <v-btn @click="bed" class="ma-2" outlined color="pink">Hospital  Bed</v-btn>
         <v-btn @click="disease" class="ma-2" outlined color="purple">Disease</v-btn>
         <v-btn @click="Regis" class="ma-2" outlined color="green">Register</v-btn>
-        <v-btn @click="order" class="ma-2" outlined color="grey">Order  Food</v-btn>
-        
+        <v-btn @click="Login" class="ma-2" outlined color="orange">LoginNutritionost</v-btn>
         </v-row>
         </div>
         <v-spacer></v-spacer>
@@ -40,11 +38,8 @@ export default {
     bed(){
       this.$router.push("/bed");
     },
-    food(){
-      this.$router.push("/Food");
-    },
-     order(){
-      this.$router.push("/order");
+    Login(){
+      this.$router.push("/loginnutr");
     },
      disease(){
       this.$router.push("/disease");
