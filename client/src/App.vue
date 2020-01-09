@@ -4,13 +4,9 @@
       <div>
        <v-row justify="center">
         <v-btn @click="home" class="ma-2" outlined color="black">Home</v-btn>
-<<<<<<< HEAD
         <v-btn @click="bed" class="ma-2" outlined color="pink">Hospital  Bed</v-btn>
         <v-btn @click="disease" class="ma-2" outlined color="purple">Login Disease</v-btn>
-=======
         <v-btn @click="nurse" class="ma-2" outlined color="pink">Nurse</v-btn>
-        <v-btn @click="disease" class="ma-2" outlined color="purple">Disease</v-btn>
->>>>>>> 3e316d77423605908af7ca0063d61f9064dbf361
         <v-btn @click="Regis" class="ma-2" outlined color="green">Register</v-btn>
         <v-btn @click="Login" class="ma-2" outlined color="orange">Nutritionost</v-btn>
         </v-row>
