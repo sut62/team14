@@ -36,6 +36,7 @@ public class Personnel {
     private @NonNull String lastname;
     private @NonNull String telephone;
     private @NonNull LocalDate Birthday;
+    private @NonNull String password;
     
 
    

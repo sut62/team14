@@ -66,11 +66,12 @@ public class PersonnelController {
     public Personnel loginNurse(@PathVariable("id") long id, @PathVariable("password") String password) {
         return personnelRepository.findNurseByPersonnel(id,password);
     }
-    @PostMapping("/personnel/{addfirstname}/{addlastname}/{addtelephone}/{addbirthday}/{maritalstatus_id}/{position_id}/{educationlevel_id}")
+    @PostMapping("/personnel/{addfirstname}/{addlastname}/{addtelephone}/{addpassword}/{addbirthday}/{maritalstatus_id}/{position_id}/{educationlevel_id}")
     public Personnel newPersonnel(Personnel newPersonnel,
     @PathVariable String addfirstname,
     @PathVariable String addlastname,
     @PathVariable String addtelephone,
+    @PathVariable String addpassword,
     @PathVariable String addbirthday,
     @PathVariable long maritalstatus_id,
     @PathVariable long position_id,
@@ -83,6 +84,7 @@ public class PersonnelController {
     newPersonnel.setFirstname(addfirstname);
     newPersonnel.setLastname(addlastname);
     newPersonnel.setTelephone(addtelephone);
+    newPersonnel.setTelephone(addpassword);
     newPersonnel.setBirthday(born);
     newPersonnel.setStatus(status);
     newPersonnel.setPosit(posit);
