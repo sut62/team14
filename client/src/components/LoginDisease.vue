@@ -53,6 +53,6 @@ export default {
       goHome() {
           this.$router.push('/');
       },
-  }
+  } //g
 };
 </script>
