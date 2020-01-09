@@ -4,7 +4,8 @@ import Personnel from '../components/Personnel';
 import order from '../components/FoodOrder';
 import Food from '../components/Food';
 import PatientBed from '../components/PatientBed';
-import disease from '../components/newDisease';
+import logdis from '../components/LoginDisease';
+import dis from '../components/newDisease';
 import Register from '../components/Register';
 import Longinregis from '../components/LonginMedical records';
 import Home from '../components/Home';
@@ -25,9 +26,13 @@ export default new Router({
              component: order
         },
         {
-            path: '/disease',
-            component: disease
+            path: '/dis',
+            component: dis
        },
+       {
+            path: '/logdis',
+            component: logdis
+        },
        {
             path: '/Food',
             component: Food
@@ -41,7 +46,7 @@ export default new Router({
             component: PatientBed
 
         },{
-            path: '/home',
+            path: '/',
             component: Home
         }
         ,{
