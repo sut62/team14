@@ -66,6 +66,10 @@ public class PersonnelController {
     public Personnel loginNurse(@PathVariable("id") long id, @PathVariable("password") String password) {
         return personnelRepository.findNurseByPersonnel(id,password);
     }
+    @GetMapping("/LonginMedicalRecords/{id}/{password}")
+    public Personnel loginMedicalRecords(@PathVariable("id") long id, @PathVariable("password") String password) {
+        return personnelRepository.findMedicalRecordsByPersonnel(id,password);
+    }
     @PostMapping("/personnel/{addfirstname}/{addlastname}/{addtelephone}/{addpassword}/{addbirthday}/{maritalstatus_id}/{position_id}/{educationlevel_id}")
     public Personnel newPersonnel(Personnel newPersonnel,
     @PathVariable String addfirstname,

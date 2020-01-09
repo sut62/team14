@@ -33,7 +33,7 @@ export default {
       this.$router.push("/home");
     },
     Regis(){
-      this.$router.push("/Regis");
+      this.$router.push("/longinregis");
     },
     bed(){
       this.$router.push("/bed");

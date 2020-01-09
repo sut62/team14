@@ -18,4 +18,7 @@ interface PersonnelRepository extends JpaRepository<Personnel, Long> {
 
     @Query( value = "SELECT * FROM PERSONNEL p where p.telephone = :id and p.password = :pass and p.position_id = 1",nativeQuery = true)
     Personnel findDoctorByPersonnel(@Param("id") long id,@Param("pass") String pass);
+
+    @Query( value = "SELECT * FROM PERSONNEL p where p.telephone = :id and p.password = :pass and p.position_id = 4",nativeQuery = true)
+    Personnel findMedicalRecordsByPersonnel(@Param("id") long id,@Param("pass") String pass);
 }
