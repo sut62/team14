@@ -43,7 +43,7 @@ export default {
           http.get('/loginNutritionost/'+this.username+ '/' + this.password)
           .then(response => {
               if (response.data != []) {
-                   this.$router.push('/order');
+                   this.$router.push('/nutr');
                } else {
                    alert('Please try again')
                    this.$refs.form.reset();this.clear()
