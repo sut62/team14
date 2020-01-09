@@ -55,19 +55,19 @@ public class PersonnelController {
         return personnelRepository.findAll().stream().collect(Collectors.toList());
     }
     @GetMapping("/loginNutritionost/{id}/{password}")
-    public Personnel loginNutritionost(@PathVariable("id") long id, @PathVariable("password") String password) {
+    public Personnel loginNutritionost(@PathVariable("id") String id, @PathVariable("password") String password) {
         return personnelRepository.findNutritionostByPersonnel(id,password);
     }
     @GetMapping("/loginDoctor/{id}/{password}")
-    public Personnel loginDoctor(@PathVariable("id") long id, @PathVariable("password") String password) {
+    public Personnel loginDoctor(@PathVariable("id") String id, @PathVariable("password") String password) {
         return personnelRepository.findDoctorByPersonnel(id,password);
     }
     @GetMapping("/loginNurse/{id}/{password}")
-    public Personnel loginNurse(@PathVariable("id") long id, @PathVariable("password") String password) {
+    public Personnel loginNurse(@PathVariable("id") String id, @PathVariable("password") String password) {
         return personnelRepository.findNurseByPersonnel(id,password);
     }
-    @GetMapping("/LonginMedicalRecords/{id}/{password}")
-    public Personnel loginMedicalRecords(@PathVariable("id") long id, @PathVariable("password") String password) {
+    @GetMapping("/LoginMedicalRecords/{id}/{password}")
+    public Personnel loginMedicalRecords(@PathVariable("id") String id, @PathVariable("password") String password) {
         return personnelRepository.findMedicalRecordsByPersonnel(id,password);
     }
     @PostMapping("/personnel/{addfirstname}/{addlastname}/{addtelephone}/{addpassword}/{addbirthday}/{maritalstatus_id}/{position_id}/{educationlevel_id}")

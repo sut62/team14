@@ -274,8 +274,15 @@ export default {
           this.register.diseaseID = "";
           this.register.patientbedID = "";
         })
+        .then(response => {
+          console.log(response);
+          this.$refs.form.reset();
+          alert('Successful !!!')
+        })
+        
         .catch(e => {
           console.log(e);
+          alert('Unsuccessful !!!')
         });
       
     },

@@ -33,7 +33,7 @@ export default {
       this.$router.push("/");
     },
     Regis(){
-      this.$router.push("/longinregis");
+      this.$router.push("/loginregis");
     },
     nurse(){
       this.$router.push("/nurselogin");
