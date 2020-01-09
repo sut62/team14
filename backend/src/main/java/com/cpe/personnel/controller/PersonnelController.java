@@ -84,7 +84,7 @@ public class PersonnelController {
     newPersonnel.setFirstname(addfirstname);
     newPersonnel.setLastname(addlastname);
     newPersonnel.setTelephone(addtelephone);
-    newPersonnel.setTelephone(addpassword);
+    newPersonnel.setPassword(addpassword);
     newPersonnel.setBirthday(born);
     newPersonnel.setStatus(status);
     newPersonnel.setPosit(posit);
