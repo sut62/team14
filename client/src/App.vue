@@ -30,7 +30,7 @@ export default {
   name: 'Home',
   methods:{
     home(){
-      this.$router.push("/home");
+      this.$router.push("/");
     },
     Regis(){
       this.$router.push("/longinregis");
