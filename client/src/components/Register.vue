@@ -274,6 +274,8 @@ export default {
           this.register.diseaseID = "";
           this.register.patientbedID = "";
         })
+        alert('success !!')
+                   this.$refs.form.reset();this.clear()
         .catch(e => {
           console.log(e);
         });
