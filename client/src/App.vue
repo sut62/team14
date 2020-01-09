@@ -4,7 +4,6 @@
       <div>
        <v-row justify="center">
         <v-btn @click="home" class="ma-2" outlined color="black">Home</v-btn>
-        <v-btn @click="bed" class="ma-2" outlined color="pink">Hospital  Bed</v-btn>
         <v-btn @click="disease" class="ma-2" outlined color="purple">Login Disease</v-btn>
         <v-btn @click="nurse" class="ma-2" outlined color="pink">Nurse</v-btn>
         <v-btn @click="Regis" class="ma-2" outlined color="green">Register</v-btn>
