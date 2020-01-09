@@ -283,6 +283,7 @@ export default {
           this.patientBed.patientRoomId = "";
           this.patientBed.physicalBedId = "";
           this.patientBed.detail = "";
+          alert('Save Successed')
         })
         .catch(e => {
           console.log(e);
