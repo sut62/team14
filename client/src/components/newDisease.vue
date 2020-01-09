@@ -170,7 +170,8 @@ export default {
             this.disease.symptom="",
             this.disease.typeID="",
             this.disease.lifespanID="",
-            this.disease.personnelID=""
+            this.disease.personnelID="",
+            alert('บันทึกเรียบร้อย')
         })
        .catch(e => {
           console.log(e);
