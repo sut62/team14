@@ -40,10 +40,10 @@ export default {
   },
   methods: {
       login() {
-          http.get('/LoginDisease/'+this.username+ '/' + this.password)
+          http.get('/loginDoctor/'+this.username+ '/' + this.password)
           .then(response => {
               if (response.data != []) {
-                   this.$router.push('/nutr');
+                   this.$router.push('/dis');
                } else {
                    alert('Please try again')
                    this.$refs.form.reset();this.clear()
