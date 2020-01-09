@@ -30,5 +30,5 @@ public class Gender {
     private @NonNull Long id;
     private @NonNull String gen_name;
     @OneToMany(fetch = FetchType.EAGER)
-    private Collection<Register> man;
+    private Collection<Register> regis;
 }

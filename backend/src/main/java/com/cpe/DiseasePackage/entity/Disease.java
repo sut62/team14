@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.cpe.personnel.entity.Personnel;
+import com.cpe.register.entity.Register;
 
 @Data
 @Entity
@@ -42,7 +44,10 @@ public class Disease {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private Personnel personnel;	
+    private Personnel personnel;
+    
+    @OneToMany(fetch = FetchType.EAGER)
+    private Collection<Register> regis;
 	
 
 }
