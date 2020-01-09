@@ -7,7 +7,10 @@
     <br />
     <br />
     <v-card class="mx-auto" max-width="400">
-      <v-card-title class="align-end fill-height">Longin Medical records</v-card-title>
+      <label
+                    class="font-weight-black  green--text  text-uppercas text-uppercas"
+                    style="font-size:2em  "
+                  > Longin Medical Records </label>
       <br />
       <v-row justify="center">
         <v-form ref="form" v-model="valid" lazy-validation style="width: 70%">
