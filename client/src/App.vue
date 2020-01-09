@@ -12,7 +12,7 @@
         </v-row>
         </div>
         <v-spacer></v-spacer>
-        <v-btn @click="Person" class="ma-2" outlined color="blue">ManagePersonnel</v-btn>
+        <v-btn @click="Person" class="ma-2" outlined color="blue">Loginpersonnel</v-btn>
     </v-app-bar>
  
        
@@ -46,7 +46,7 @@ export default {
       this.$router.push("/logdis");
     },
      Person(){
-      this.$router.push("/per");
+      this.$router.push("/Admin");
     },
 
   }

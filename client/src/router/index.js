@@ -13,7 +13,7 @@ import Loginnutr from '../components/LoginNutritionost';
 import nutr from '../components/Nutritionost';
 import nurselogin from '../components/NurseLogin';
 import nurse from '../components/Nurse';
-
+import LoginAdmin from '../components/LoginAdmin';
 Vue.use(Router);
 
 export default new Router({
@@ -68,6 +68,10 @@ export default new Router({
         ,{
             path: '/loginregis',
             component: Loginregis
+        }
+        ,{
+            path: '/Admin',
+            component: LoginAdmin
         }
     ]
 });
