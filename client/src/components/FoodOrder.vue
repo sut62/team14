@@ -163,6 +163,7 @@ export default {
         .then(response => {
           console.log(response);
           this.clear();
+          alert('Oder Success!!')
         })
         .catch(e => {
           console.log(e);
