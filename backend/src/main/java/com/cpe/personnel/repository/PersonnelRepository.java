@@ -11,14 +11,14 @@ interface PersonnelRepository extends JpaRepository<Personnel, Long> {
     Personnel findById(long id);
 
     @Query( value = "SELECT * FROM PERSONNEL p where p.telephone = :id and p.password = :pass and p.position_id = 3",nativeQuery = true)
-    Personnel findNutritionostByPersonnel(@Param("id") long id,@Param("pass") String pass);
+    Personnel findNutritionostByPersonnel(@Param("id") String id,@Param("pass") String pass);
 
     @Query( value = "SELECT * FROM PERSONNEL p where p.telephone = :id and p.password = :pass and p.position_id = 2",nativeQuery = true)
-    Personnel findNurseByPersonnel(@Param("id") long id,@Param("pass") String pass);
+    Personnel findNurseByPersonnel(@Param("id") String id,@Param("pass") String pass);
 
     @Query( value = "SELECT * FROM PERSONNEL p where p.telephone = :id and p.password = :pass and p.position_id = 1",nativeQuery = true)
-    Personnel findDoctorByPersonnel(@Param("id") long id,@Param("pass") String pass);
+    Personnel findDoctorByPersonnel(@Param("id") String id,@Param("pass") String pass);
 
     @Query( value = "SELECT * FROM PERSONNEL p where p.telephone = :id and p.password = :pass and p.position_id = 4",nativeQuery = true)
-    Personnel findMedicalRecordsByPersonnel(@Param("id") long id,@Param("pass") String pass);
+    Personnel findMedicalRecordsByPersonnel(@Param("id") String id,@Param("pass") String pass);
 }

@@ -10,7 +10,7 @@
       <label
                     class="font-weight-black  green--text  text-uppercas text-uppercas"
                     style="font-size:2em  "
-                  > Longin Medical Records </label>
+                  > Login Medical Records </label>
       <br />
       <v-row justify="center">
         <v-form ref="form" v-model="valid" lazy-validation style="width: 70%">
@@ -20,7 +20,7 @@
       </v-row>
 
       <v-row justify="center">
-        <v-btn @click="login">Login</v-btn>
+        <v-btn @click="login">Login<v-icon slot="prepend" color="red">mdi-water</v-icon></v-btn>
 
       </v-row>
       <br />
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
       login() {
-          http.get('/LonginMedicalRecords/'+this.username+ '/' + this.password)
+          http.get('/LoginMedicalRecords/'+this.username+ '/' + this.password)
           .then(response => {
               if (response.data != []) {
                    this.$router.push('/Regis');

@@ -6,7 +6,7 @@ import Food from '../components/Food';
 import PatientBed from '../components/PatientBed';
 import disease from '../components/newDisease';
 import Register from '../components/Register';
-import Longinregis from '../components/LonginMedical records';
+import Loginregis from '../components/LoginMedical records';
 import Home from '../components/Home';
 import Loginnutr from '../components/LoginNutritionost';
 import nutr from '../components/Nutritionost';
@@ -61,8 +61,8 @@ export default new Router({
             component: nurse
         }
         ,{
-            path: '/longinregis',
-            component: Longinregis
+            path: '/loginregis',
+            component: Loginregis
         }
     ]
 });
