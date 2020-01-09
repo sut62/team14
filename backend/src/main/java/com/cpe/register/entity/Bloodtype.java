@@ -28,5 +28,5 @@ public class Bloodtype{
     private @NonNull Long id;
     private @NonNull String blood_name;
     @OneToMany(fetch = FetchType.EAGER)
-    private Collection<Register> man;
+    private Collection<Register> regis;
 }

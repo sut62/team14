@@ -1,7 +1,7 @@
 package com.cpe.patientBed.entity;
 
 import lombok.*;
-
+import java.util.Collection;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,6 +18,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import com.cpe.register.entity.Register;
 
 @Getter
 @Setter
@@ -54,6 +55,10 @@ public class PatientBed {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = PhysicalBed.class)
     @JoinColumn(name = "PHYSICALBED_ID", insertable = true)
     private PhysicalBed physicalBed; 
+
+    
+    @OneToMany(fetch = FetchType.EAGER)
+    private Collection<Register> regis;
 
     private @NonNull String detail;
     private @NonNull String show;
