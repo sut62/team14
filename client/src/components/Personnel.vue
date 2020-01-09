@@ -57,6 +57,19 @@
               ><v-icon slot="prepend" color="black">mdi-cellphone-android</v-icon></v-text-field>
             </v-col>
           </v-row>
+          <v-row>
+            <v-col cols="10">
+             <v-text-field
+                outlined
+                label="Password"
+                v-model="personnel.password"
+                  item-text="addpassword"
+                  item-value="addpassword"
+                :rules="[(v) => !!v || 'Item is required']"
+                required 
+              ><v-icon slot="prepend" color="black">mdi-key-variant</v-icon></v-text-field>
+            </v-col>
+          </v-row>
             <v-row >
              <v-col cols="10">
                 <v-select
@@ -150,7 +163,8 @@ export default {
       personnel: {
         userName: "",
         userlastName: "",
-        addphonenumber: "",
+        addtelephone: "",
+        addpassword: "",
         addbirthday: "",
         positionID: "",
         maritalstatusID: "",
@@ -208,6 +222,8 @@ export default {
             this.personnel.userlastName +
             "/" +
             this.personnel.telephone +
+            "/" +
+            this.personnel.password +
             "/" +
             this.date +
             "/"+

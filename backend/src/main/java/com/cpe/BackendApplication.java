@@ -37,7 +37,7 @@ public class BackendApplication {
     ApplicationRunner init(TypeRepository typeRepository,LifeSpanRepository lifespanRepository 
 	,PatientRoomRepository patientRoomRepository,PatientZoneRepository patientZoneRepository, PhysicalBedRepository physicalBedRepository,
 	PositionRepository positionRepository, MaritalstatusRepository maritalstatusRepository, EducationlevelRepository educationlevelRepository,GenderRepository genderRepository,BloodtypeRepository bloodtypeRepository,
-	FoodtypeRepository foodtypeRepository, MealRepository mealRepository
+	FoodtypeRepository foodtypeRepository, MealRepository mealRepository, AdminRepository adminRepository
 	) {
 		return args -> {
 
@@ -68,7 +68,7 @@ public class BackendApplication {
 				physicalBed.setName(physBed_name); // set ชื่อ (physBed_name) ให้ Object ชื่อ physicalBed
 				physicalBedRepository.save(physicalBed); // บันทึก Objcet ชื่อ physicalBed
 			});
-			Stream.of("Doctor", "Nurse","Nutritionost","Housekeeper","Chef").forEach(position_name -> {
+			Stream.of("Doctor", "Nurse","Nutritionost","Medical Record","Housekeeper","Chef").forEach(position_name -> {
 				Position position = new Position();
 				position.setPosition_name(position_name);
 				positionRepository.save(position);
@@ -104,6 +104,14 @@ public class BackendApplication {
 				meal.setMealtype(mealtype); 
 				mealRepository.save(meal); 
 			});
+			Stream.of("sopon").forEach(user -> {
+				Admin admin = new Admin();
+				admin.setUser(user);
+				Stream.of("1").forEach(password -> {
+					admin.setPassword(password);
+				});
+				adminRepository.save(admin);
+			});
 
 
 			genderRepository.findAll().forEach(System.out::println);
@@ -111,7 +119,7 @@ public class BackendApplication {
 			positionRepository.findAll().forEach(System.out::println);
 			maritalstatusRepository.findAll().forEach(System.out::println);
 			educationlevelRepository.findAll().forEach(System.out::println);
-
+			adminRepository.findAll().forEach(System.out::println);
 			foodtypeRepository.findAll().forEach(System.out::println);
 			mealRepository.findAll().forEach(System.out::println);
 		};
