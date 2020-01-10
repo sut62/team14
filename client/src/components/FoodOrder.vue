@@ -66,6 +66,7 @@
 
              <v-row >
                 <v-textarea
+                      id ="12"
                       name="orderFood.details"
                       v-model="orderFood.details"
                       filled

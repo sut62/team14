@@ -11,8 +11,8 @@
       <br />
       <v-row justify="center">
         <v-form ref="form" v-model="valid" lazy-validation style="width: 70%">
-          <v-text-field v-model="username" type = "text" label="Username" outlined><v-icon large slot="prepend" color="purple">mdi-account</v-icon></v-text-field>
-          <v-text-field v-model="password" type = "password" label="Password" outlined ><v-icon large  slot="prepend" color="purple">mdi-key-variant</v-icon></v-text-field>
+          <v-text-field id ="16" v-model="username" type = "text" label="Username" outlined><v-icon large slot="prepend" color="purple">mdi-account</v-icon></v-text-field>
+          <v-text-field id ="17" v-model="password" type = "password" label="Password" outlined ><v-icon large  slot="prepend" color="purple">mdi-key-variant</v-icon></v-text-field>
         </v-form>
       </v-row>
 

@@ -21,6 +21,7 @@
              <v-text-field
               
                 outlined
+                id ="1"
                 label="FirstName"
                 v-model="personnel.userName"
                   :items="userName"
@@ -33,6 +34,7 @@
             <v-col cols="5">
              <v-text-field
                 outlined
+                id ="2"
                 label="LastName"
                 v-model="personnel.userlastName"
                   :items="userlastName"
@@ -47,6 +49,7 @@
           <v-row>
             <v-col cols="10">
              <v-text-field
+                id ="3"
                 outlined
                 label="Telephone"
                 v-model="personnel.telephone"
@@ -60,6 +63,7 @@
           <v-row>
             <v-col cols="10">
              <v-text-field
+                id ="4"
                 outlined
                 label="Password"
                 v-model="personnel.password"

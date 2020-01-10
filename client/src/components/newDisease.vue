@@ -14,6 +14,7 @@
        <v-icon slot="prepend" color="pink">mdi-hospital</v-icon>
         <v-col cols="30" sm="5">
           <v-text-field
+            id ="10"
             v-model="disease.name"
             label="ชื่อโรค"
             filled
@@ -27,6 +28,7 @@
         <v-col cols="12" sm="8">
           <v-text-field
             v-model="disease.symptom"
+            id ="11"
             label="อาการ"
             filled
             clearable
