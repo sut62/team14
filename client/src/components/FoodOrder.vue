@@ -163,7 +163,7 @@ export default {
         .then(response => {
           console.log(response);
           this.clear();
-          alert('Oder Success!!')
+          this.$router.push('/Suc');
         })
         .catch(e => {
           console.log(e);

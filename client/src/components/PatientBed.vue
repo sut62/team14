@@ -283,7 +283,7 @@ export default {
           this.patientBed.patientRoomId = "";
           this.patientBed.physicalBedId = "";
           this.patientBed.detail = "";
-          alert('Save Successed')
+          this.$router.push('/Suc');
         })
         .catch(e => {
           console.log(e);

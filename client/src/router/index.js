@@ -14,6 +14,7 @@ import nutr from '../components/Nutritionost';
 import nurselogin from '../components/NurseLogin';
 import nurse from '../components/Nurse';
 import LoginAdmin from '../components/LoginAdmin';
+import Suc from '../components/Succcsess';
 Vue.use(Router);
 
 export default new Router({
@@ -72,6 +73,10 @@ export default new Router({
         ,{
             path: '/Admin',
             component: LoginAdmin
+        }
+        ,{
+            path: '/Suc',
+            component: Suc
         }
     ]
 });

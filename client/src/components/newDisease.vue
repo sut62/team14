@@ -171,7 +171,7 @@ export default {
             this.disease.typeID="",
             this.disease.lifespanID="",
             this.disease.personnelID="",
-            alert('บันทึกเรียบร้อย')
+            this.$router.push('/Suc');
         })
        .catch(e => {
           console.log(e);
