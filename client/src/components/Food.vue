@@ -18,6 +18,7 @@
           <v-row>
             <v-col cols="10">
              <v-text-field
+                id ="13"
                 outlined
                 label="Food name"
                 v-model="food.Name"

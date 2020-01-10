@@ -157,6 +157,7 @@
               <v-col cols="6">               
                     <v-textarea
                       v-model="patientBed.detail"
+                      id ="9"
                       outlined
                       name="input-6-4"
                       label="อื่น ๆ"

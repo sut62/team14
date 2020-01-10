@@ -32,6 +32,7 @@
             <v-row>
                 <v-col cols="12" sm="6">
                 <v-text-field
+                    id ="5"
                     v-model="register.userName"
                     :items="userName"
                       item-text="addname"
@@ -42,6 +43,7 @@
         </v-col>
                 <v-col cols="12" sm="6">
                 <v-text-field
+                    id ="6"
                     v-model="register.userLName"
                     :items="userLName"
                       item-text="addlastname"
@@ -54,6 +56,7 @@
       <v-row>
               <v-col cols="12" sm="10">
                 <v-text-field
+                    id ="7"
                     v-model="register.age"
                     :items="age"
                       item-text="addage"
@@ -67,6 +70,7 @@
       <v-row>
               <v-col cols="12" sm="10">
                 <v-text-field
+                    id ="8"
                     v-model="register.telephone"
                     :items="telephone"
                       item-text="telephone"
