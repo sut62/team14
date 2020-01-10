@@ -78,6 +78,7 @@
              <v-col cols="10">
                 <v-select
                   label="Maritalstatus"
+                  id ="25"
                   outlined
                   v-model="personnel.maritalstatusID"
                   :items="maritalstatuss"
@@ -94,6 +95,7 @@
               <v-col cols="10">
                 <v-select
                   label="Position"
+                  id ="26"
                   outlined
                   v-model="personnel.positionID"
                   :items="positions"
@@ -107,6 +109,7 @@
             <v-row>
                <v-col cols="10">
                 <v-select
+                  id ="27"
                   label="Educationlevel"
                   outlined
                   v-model="personnel.educationlevelID"
@@ -134,7 +137,7 @@
             v-on="on"
           ><v-icon slot="prepend" color="black" >mdi-cake-variant</v-icon></v-text-field>
         </template>
-        <v-date-picker v-model="date" @input="addbirthday = false" format="YYYY-MM-dd"></v-date-picker>
+        <v-date-picker id ="24" v-model="date" @input="addbirthday = false" format="YYYY-MM-dd"></v-date-picker>
       </v-menu>
             <v-row justify="center">
               <v-col cols="12">
