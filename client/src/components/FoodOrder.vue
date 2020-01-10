@@ -18,6 +18,7 @@
 
               <v-col cols="10">
                 <v-select
+                  id ="42"
                   label="เลือกอาหาร"
                   outlined
                   v-model="orderFood.foodId"
@@ -35,6 +36,7 @@
             <v-row>
               <v-col cols="10">
                 <v-select
+                  id ="41"
                   label="เลือกผู้ป่วย"
                   outlined
                   v-model="orderFood.bedId"
@@ -52,6 +54,7 @@
               <v-col cols="10">
                  <v-select
                     label="เลือกพนักงาน"
+                        id ="40"
                        outlined
                        v-model="orderFood.emId"
                        :items="employee"

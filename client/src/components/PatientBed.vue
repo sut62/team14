@@ -42,6 +42,7 @@
                 <v-select 
                  background-color="light-blue lighten-5"
                   solo
+                  id ="36"
                   label="Personnel"
                   outlined
                   v-model="patientBed.personnelId"
@@ -76,6 +77,7 @@
                 <v-select
                 background-color="light-blue lighten-5"
                  solo
+                  id ="35"
                   label="BedZone"
                   outlined
                   v-model="patientBed.patientZoneId"
@@ -107,6 +109,7 @@
                 <v-select
                 background-color="light-blue lighten-5"
                  solo
+                  id ="33"
                   label="Room"
                   outlined
                   v-model="patientBed.patientRoomId"
@@ -138,6 +141,7 @@
                 <v-select
                 background-color="light-blue lighten-5"
                   solo
+                  id ="34"
                   label="Physical"
                   outlined
                   v-model="patientBed.physicalBedId"
