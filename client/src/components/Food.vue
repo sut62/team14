@@ -34,7 +34,6 @@
             <v-row>
               <v-col cols="10">
                 <v-select
-                  id ="43"
                   label="Personnel"
                   outlined
                   v-model="food.personnel"
@@ -51,7 +50,6 @@
              <v-row>
               <v-col cols="10">
                 <v-select
-                  id ="44"
                   label="Foodtype"
                   outlined
                   v-model="food.foodtype"
@@ -69,7 +67,6 @@
             <v-row>
               <v-col cols="10">
                 <v-select
-                  id ="45"
                   label="Meal"
                   outlined
                   v-model="food.meal"

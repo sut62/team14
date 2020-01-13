@@ -18,7 +18,6 @@
             <v-row>
               <v-col cols="15">
                 <v-select
-                  id ="28"
                   background-color="blue lighten-5"
                   label="ชื่อพนักงาน"
                   outlined
@@ -85,7 +84,6 @@
             <v-row>
               <v-col cols="15">
                 <v-select
-                  id ="29"
                   label="เพศ"
                   outlined
                   v-model="register.genderID"
@@ -99,7 +97,6 @@
             <v-row>
               <v-col cols="15">
                 <v-select
-                  id ="30"
                   label="หมู่เลือด"
                   outlined
                   v-model="register.bloodtypeID"
@@ -113,7 +110,6 @@
             <v-row>
               <v-col cols="15">
                 <v-select
-                  id ="31"
                   label="โรคที่ผู้ป่วยเป็น"
                   outlined
                   v-model="register.diseaseID"
@@ -128,7 +124,6 @@
             <v-row>
               <v-col cols="15">
                 <v-select
-                  id ="32"
                   label="เตียงผู้ป่วย"
                   outlined
                   v-model="register.patientbedID"
