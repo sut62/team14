@@ -39,7 +39,6 @@
         <v-row justify="center">
               <v-col cols="4">
                 <v-select
-                  id ="37"
                   label="ชนิดของโรค"
                   solo
                   background-color="lime lighten-3"
@@ -55,7 +54,6 @@
         <v-row justify="center">
               <v-col cols="4">
                 <v-select
-                  id ="38"
                   label="ช่วงอายุที่พบบ่อย"
                   solo
                   background-color="lime lighten-3"
@@ -71,7 +69,6 @@
              <v-row justify="center">
               <v-col cols="4">
                 <v-select
-                  id ="39"
                   label="แพทย์ผู้เพิ่มโรค"
                   solo
                   background-color="lime lighten-3"
