@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.net.URLDecoder;
-
+import java.util.Date;
 import com.cpe.orderfood.entity.FoodOrder;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.backendfood.entity.Food;
@@ -70,6 +70,7 @@ public class FoodOrderController {
         newFoodOrder.setOrderBy(employee);
         newFoodOrder.setPatient(patient);
         newFoodOrder.setDetails(details);
+        newFoodOrder.setOrderDate(new Date());
         return foodOrderRepository.save(newFoodOrder);
 
     }

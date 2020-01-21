@@ -9,6 +9,10 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import java.util.Collection;
+import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +34,12 @@ public class FoodOrder {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="FOODORDER_SEQ")
     @Column(name="FOODORDER_ID",unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String details;
+
+    @NotNull
+    @Size(min = 1, max = 100)
+    private String details;
+    @NotNull
+    private Date orderDate;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Food.class)
     @JoinColumn(name = "Food_ID", insertable = true)
