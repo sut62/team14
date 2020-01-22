@@ -15,6 +15,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.register.entity.Register;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @Entity
@@ -29,10 +31,13 @@ public class Disease {
     private @NonNull Long id;
 
     @Column(unique = true, nullable = true)
-    private @NonNull String name;
+    @NotNull
+    @Size(min = 1, max = 70)
+    private String name;
 
-    @Column(unique = true, nullable = true)
-    private @NonNull String symptom;
+    @Column(nullable = true)
+    @NotNull
+    private String symptom;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Type.class)
     @JoinColumn(name = "TYPE_ID", insertable = true)
