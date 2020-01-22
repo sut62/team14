@@ -67,7 +67,7 @@ public class RegisterController {
     public Register newRegister(final Register newRegister,
     @PathVariable final String addname,
     @PathVariable final String addlastname,
-    @PathVariable final String addage,
+    @PathVariable final Integer addage,
     @PathVariable final String addtelephone,
     @PathVariable final long gender_id,
     @PathVariable final long bloodtype_id,

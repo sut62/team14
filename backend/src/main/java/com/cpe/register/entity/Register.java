@@ -19,6 +19,8 @@ import com.cpe.orderfood.entity.FoodOrder;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.DiseasePackage.entity.Disease;
 import com.cpe.patientBed.entity.PatientBed;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 @Data
 @Entity
@@ -31,9 +33,14 @@ public class Register {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Register_seq")
     @Column(name = "Register_ID", unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String addlastname;
-    private @NonNull String addname;
-    private @NonNull String addage;
+    @NotNull
+    private  String addlastname;
+    @NotNull
+    private  String addname;
+    @NotNull
+    @Max(200)
+    private Integer addage;
+    @Pattern(regexp = "\\d{10}")
     private @NonNull String telephone;
    
 
