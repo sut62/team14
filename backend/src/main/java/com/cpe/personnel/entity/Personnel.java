@@ -1,4 +1,5 @@
 package com.cpe.personnel.entity;
+
 import lombok.*;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -10,6 +11,8 @@ import com.fasterxml.jackson.annotation.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import java.time.LocalDate;
@@ -21,6 +24,8 @@ import com.cpe.patientBed.entity.PatientBed;
 import com.cpe.backendfood.entity.Food;
 import com.cpe.DiseasePackage.entity.Disease;
 import com.cpe.register.entity.Register;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 @Data
 @Entity
 @NoArgsConstructor
@@ -32,9 +37,14 @@ public class Personnel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="PERSONNEL_seq")
     @Column(name = "PERSONNEL_ID", unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String firstname;
-    private @NonNull String lastname;
+    private @NotNull String firstname;
+    @NotNull
+    private @NotNull String lastname;
+    @NotNull
+    @Column(unique=true)
+    @Pattern(regexp = "\\d{10}")
     private @NonNull String telephone;
+    @Past
     private @NonNull LocalDate Birthday;
     private @NonNull String password;
     
