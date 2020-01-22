@@ -20,6 +20,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.cpe.register.entity.Register;
 
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 @Getter
 @Setter
 @Data
@@ -59,8 +62,10 @@ public class PatientBed {
     
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Register> regis;
-
-    private @NonNull String detail;
-    private @NonNull String show;
+    @NotNull
+    @Size(min = 1, max = 100)
+    private String detail;
+    @NotNull
+    private String show;
 
 }
