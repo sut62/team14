@@ -41,7 +41,6 @@ public class Personnel {
     @NotNull
     private @NotNull String lastname;
     @NotNull
-    @Column(unique=true)
     @Pattern(regexp = "\\d{10}")
     private @NonNull String telephone;
     @Past
