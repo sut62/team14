@@ -17,6 +17,10 @@ import javax.persistence.FetchType;
 import com.cpe.orderfood.entity.FoodOrder;
 import com.cpe.personnel.entity.Personnel;
 
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Data
 @Entity
@@ -29,7 +33,10 @@ public class Food {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="food_seq")
     @Column(name = "Food_ID", unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String name;
+
+    @NotNull
+    @Size(min = 4,max = 20)
+    private String name;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity =Foodtype.class)
     @JoinColumn(name = "FoodtypeID", insertable = true)
