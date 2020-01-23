@@ -63,7 +63,7 @@ public class RegisterController {
         return registerRepository.findAll().stream().collect(Collectors.toList());
     }
     //ใส่พาท
-    @PostMapping("/register{personnel_id}/{addname}/{addlastname}/{addage}/{addtelephone}/{bloodtype_id}/{gender_id}/{id}/{patientBed_id}")
+    @PostMapping("/register{personnel_id}/{addname}/{addlastname}/{addage}/{addtelephone}/{bloodtype_id}/{gender_id}/{disease_id}/{patientBed_id}")
     public Register newRegister(final Register newRegister,
     @PathVariable final String addname,
     @PathVariable final String addlastname,
@@ -72,15 +72,16 @@ public class RegisterController {
     @PathVariable final long gender_id,
     @PathVariable final long bloodtype_id,
     @PathVariable final long personnel_id,
-    @PathVariable final long id,
+    @PathVariable final long disease_id,
     @PathVariable final long patientBed_id
     ){            
 
         final Bloodtype   bloodtypename   = bloodtypeRepository.findById(bloodtype_id);
         final Gender      gendername      = genderRepository.findById(gender_id);
         final Personnel   createdby       = personnelRepository.findById(personnel_id);
-        final Disease     desname         = diseaseRepository.findById(id);
+        final Disease     desname         = diseaseRepository.findById(disease_id);
         final PatientBed  patname         = patientBedRepository.findById(patientBed_id);
+        String fullname =  "  " +addname+"  "+ addlastname;
 
     newRegister.setAddname(addname);
     newRegister.setAddlastname(addlastname);
@@ -91,6 +92,7 @@ public class RegisterController {
     newRegister.setCreatedby(createdby);
     newRegister.setDesname(desname);
     newRegister.setPatname(patname);
+    newRegister.setFullname(fullname);
 
     return registerRepository.save(newRegister);
     

@@ -55,7 +55,7 @@
                        outlined
                        v-model="orderFood.emId"
                        :items="employee"
-                       item-text="firstname"
+                       item-text="fullname"
                        item-value="id"
                        :rules="[(v) => !!v || 'Item is required']"
                        required

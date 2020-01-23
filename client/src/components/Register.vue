@@ -1,35 +1,27 @@
-<template >
-  <v-container >
-    <v-card
-      max-width="900"
-      class="mx-auto"
-      >
-    <v-layout text-center wrap>
-      <v-flex mb-4>
-        <br />
-        <h1 class="display-2 font-weight-bold mb-3">ระบบลงทะเบียนผู้ป่วย</h1>
-        <hr/>
-      </v-flex>
-    </v-layout>
-    <v-row justify="center">
-      <v-col cols="4">
-        <v-form v-model="valid" ref="form" >
-          <div>
-            <v-row>
-              <v-col cols="15">
+<template>
+<v-container>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="8" md="6">
+            <v-card class="elevation-12">
+              <v-toolbar color="teal accent-3" light flat>
+                <v-icon dark>mdi-hospital</v-icon>&nbsp;&nbsp;
+
+                <span class="white--text">
+                  <v-toolbar-title>ระบบลงทะเบียนผู้ป่วย</v-toolbar-title>
+                </span>
+                <div class="flex-grow-1"></div>
+              </v-toolbar>
+              <v-form v-model="valid" ref="form" >
+              <v-card-text>
                 <v-select
-                  background-color="blue lighten-5"
                   label="ชื่อพนักงาน"
                   outlined
                   v-model="register.personnelID"
                   :items="personnels"
-                  item-text="firstname"
+                  item-text="fullname"
                   item-value="id"
-                  required
-                ><v-icon slot="prepend" color="blue">mdi-hospital-building</v-icon></v-select>
-              </v-col>
-            </v-row>
-            <v-row>
+                ></v-select>
+              <v-row>
                 <v-col cols="12" sm="6">
                 <v-text-field
                     id ="5"
@@ -53,8 +45,7 @@
                 ></v-text-field>
         </v-col>
       </v-row>
-      <v-row>
-              <v-col cols="12" sm="10">
+                <v-row>    
                 <v-text-field
                     id ="7"
                     v-model="register.age"
@@ -64,11 +55,9 @@
                       label="อายุ"
                       shaped
           ><v-icon slot="prepend" color="blue">mdi-spellcheck</v-icon></v-text-field>
-        </v-col>
               
             </v-row>
       <v-row>
-              <v-col cols="12" sm="10">
                 <v-text-field
                     id ="8"
                     v-model="register.telephone"
@@ -78,81 +67,62 @@
                       label="เบอร์โทรศัพท์"
                       shaped
           ><v-icon slot="prepend" color="blue">mdi-phone-in-talk</v-icon></v-text-field>
-        </v-col>
-              
             </v-row>
             <v-row>
-              <v-col cols="15">
                 <v-select
                   label="เพศ"
-                  outlined
                   v-model="register.genderID"
                   :items="genders"
                   item-text="gen_name"
                   item-value="id"
-                  required
                 ><v-icon slot="prepend" color="purple">mdi-gender-transgender</v-icon></v-select>
-              </v-col>
             </v-row>
             <v-row>
-              <v-col cols="15">
                 <v-select
                   label="หมู่เลือด"
-                  outlined
                   v-model="register.bloodtypeID"
                   :items="bloodtypes"
                   item-text="blood_name"
                   item-value="id"
-                  required
                 ><v-icon slot="prepend" color="red">mdi-water</v-icon></v-select>
-              </v-col>
             </v-row>
             <v-row>
-              <v-col cols="15">
                 <v-select
                   label="โรคที่ผู้ป่วยเป็น"
-                  outlined
                   v-model="register.diseaseID"
                   :items="diseases"
                   item-text="name"
                   item-value="id"
-                  required
                 ><v-icon slot="prepend" color="green">mdi-biohazard</v-icon></v-select>
-              </v-col>
             </v-row>
 
             <v-row>
-              <v-col cols="15">
                 <v-select
                   label="เตียงผู้ป่วย"
-                  outlined
                   v-model="register.patientbedID"
                   :items="patientbeds"
                   item-text="show"
                   item-value="patientBed_id"
-                  required
                 ><v-icon slot="prepend" color="black">mdi-hotel</v-icon></v-select>
-              </v-col>
             </v-row>
-            <v-row justify="center">
+                <v-row justify="center">
               <v-col cols="12">
-                <v-btn @click="saveRegister" :class="{ orange: !valid, green: valid }">submit</v-btn>
+                <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก</v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
                 <b-button style="margin-left: 15px;">
-                <router-link to="/viewEm"><v-btn color="blue darken-1">Show</v-btn></router-link>
         </b-button>
         <br/>
               </v-col>
             </v-row>
             <br />
+              </v-card-text>
+              </v-form>
+            </v-card>
             
-          </div>
-        </v-form>
-      </v-col>
-    </v-row>
-    </v-card>
-  </v-container>
-  
+          </v-col>
+        </v-row>
+        
+        </v-container>
 </template>
 
 <script>
@@ -283,7 +253,6 @@ export default {
           this.$refs.form.reset();
           this.$router.push('/Suc');
         })
-        
         .catch(e => {
           console.log(e);
           alert('Unsuccessful !!!')

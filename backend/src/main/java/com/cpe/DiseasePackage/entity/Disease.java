@@ -27,15 +27,15 @@ public class Disease {
 	@SequenceGenerator(name="disease_seq",sequenceName="disease_seq")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="disease_seq")
    
-    @Column(unique = true, nullable = true)
+    @Column(name = "DISEASE_ID" , unique = true, nullable = true)
     private @NonNull Long id;
 
-    @Column(unique = true, nullable = true)
+    //@Column(unique = true, nullable = true)
     @NotNull
     @Size(min = 1, max = 70)
     private String name;
 
-    @Column(nullable = true)
+    //@Column(nullable = true)
     @NotNull
     private String symptom;
 
