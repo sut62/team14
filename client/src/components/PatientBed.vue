@@ -46,7 +46,7 @@
                   outlined
                   v-model="patientBed.personnelId"
                   :items="personnels"
-                  item-text="firstname"
+                  item-text="fullname"
                   item-value="id"
                   color="blue" 
                     menu-props="auto"

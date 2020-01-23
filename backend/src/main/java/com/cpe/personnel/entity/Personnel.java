@@ -46,6 +46,7 @@ public class Personnel {
     @Past
     private @NonNull LocalDate Birthday;
     private @NonNull String password;
+    private @NonNull String fullname;
     
 
    
