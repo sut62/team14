@@ -7,6 +7,7 @@ import PatientBed from '../components/PatientBed';
 import logdis from '../components/LoginDisease';
 import dis from '../components/newDisease';
 import Register from '../components/Register';
+import viewRegister from '../components/viewRegister';
 import Loginregis from '../components/LoginMedical records';
 import Home from '../components/Home';
 import Loginnutr from '../components/LoginNutritionost';
@@ -77,6 +78,10 @@ export default new Router({
         ,{
             path: '/Suc',
             component: Suc
+        }
+        ,{
+            path: '/viewregis',
+            component: viewRegister
         }
     ]
 });
