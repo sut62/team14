@@ -39,7 +39,7 @@
                   outlined
                   v-model="orderFood.bedId"
                   :items="patient"
-                  item-text="addname"
+                  item-text="fullname"
                   item-value="id"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
