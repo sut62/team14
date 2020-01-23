@@ -4,11 +4,8 @@
           <v-col cols="12" sm="8" md="6">
             <v-card class="elevation-12">
               <v-toolbar color="teal accent-3" light flat>
-                <v-icon dark>mdi-hospital</v-icon>&nbsp;&nbsp;
-
-                <span class="white--text">
-                  <v-toolbar-title>ระบบลงทะเบียนผู้ป่วย</v-toolbar-title>
-                </span>
+                <v-chip class="display-1" color="white" outlined pill large >ระบบลงทะเบียนผู้ป่วย<v-icon right large>mdi-account-plus-outline</v-icon>
+    </v-chip>
                 <div class="flex-grow-1"></div>
               </v-toolbar>
               <v-form v-model="valid" ref="form" >
