@@ -69,6 +69,7 @@
                 v-model="personnel.password"
                   item-text="addpassword"
                   item-value="addpassword"
+                  type = "password"
                 :rules="[(v) => !!v || 'Item is required']"
                 required 
               ><v-icon slot="prepend" color="black">mdi-key-variant</v-icon></v-text-field>
@@ -135,6 +136,8 @@
             label="BIRTHDAY"
             readonly
             v-on="on"
+            :rules="[(v) => !!v || '*จำเป็น']"
+                  required
           ><v-icon slot="prepend" color="black" >mdi-cake-variant</v-icon></v-text-field>
         </template>
         <v-date-picker id ="24" v-model="date" @input="addbirthday = false" format="YYYY-MM-dd"></v-date-picker>
@@ -148,6 +151,7 @@
         >submit</v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
                 <b-button style="margin-left: 15px;">
+                <router-link to="/viewpersonnel"><v-btn color="blue lighten-5">SHOWPERSONNEL</v-btn></router-link>
         </b-button>
               </v-col>
             </v-row>
@@ -245,7 +249,7 @@ export default {
         .then(response => {
           console.log(response);
           this.$refs.form.reset();
-          this.$router.push('/Suc');
+          this.$router.push('/viewpersonnel');
         })
         .catch(e => {
           console.log(e);
