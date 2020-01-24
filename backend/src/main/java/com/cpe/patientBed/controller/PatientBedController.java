@@ -59,6 +59,12 @@ public class PatientBedController {
         return patientBedRepository.findAll().stream().collect(Collectors.toList());
     }
 
+
+    @GetMapping("/SearchPatientBed/{patientBed_id}")   
+    public PatientBed SearchBed(@PathVariable("patientBed_id") long patientBed_id) { 
+        return patientBedRepository.findById(patientBed_id);
+    }
+
     @PostMapping("/patientBed/{personal_id}/{zone_id}/{room_id}/{physBed_id}/{detail}")
     public PatientBed savePatientBed(PatientBed newPatientBed,
     @PathVariable long personal_id,
