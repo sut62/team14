@@ -17,6 +17,9 @@ import nurse from '../components/Nurse';
 import LoginAdmin from '../components/LoginAdmin';
 import ViewPersonnel from '../components/ViewPersonnel';
 import Suc from '../components/Succcsess';
+import BedSuccess from '../components/BedSuccess';
+import ViewBedData from '../components/ViewBedData';
+
 Vue.use(Router);
 
 export default new Router({
@@ -87,6 +90,13 @@ export default new Router({
         ,{
             path: '/viewpersonnel',
             component: ViewPersonnel
+        },{
+            path: '/bedsuccess',
+            component: BedSuccess
+        },{
+            path: '/ViewBedData',
+            component: ViewBedData
         }
+        
     ]
 });

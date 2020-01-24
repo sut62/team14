@@ -11,7 +11,8 @@
               <v-layout text-center wrap >
                 <v-flex mb-0.1>
                   <label
-                    class="font-weight-black  teal--text  text-uppercas text-uppercas"
+                    
+                    class="font-weight-black  pink--text  text-uppercas text-uppercas"
                     style="font-size:4.5em  "
                   >Add Patient Bed</label>
                 </v-flex>
@@ -40,7 +41,7 @@
                 </label>
                
                 <v-select 
-                 background-color="light-blue lighten-5"
+                 background-color=""
                   solo
                   label="Personnel"
                   outlined
@@ -74,7 +75,7 @@
                  >     จำเป็น
                 </label>
                 <v-select
-                background-color="light-blue lighten-5"
+                background-color=""
                  solo
                   label="BedZone"
                   outlined
@@ -105,7 +106,7 @@
                  >     จำเป็น
                 </label>
                 <v-select
-                background-color="light-blue lighten-5"
+                background-color=""
                  solo
                   label="Room"
                   outlined
@@ -136,7 +137,7 @@
                  >     จำเป็น
                 </label>
                 <v-select
-                background-color="light-blue lighten-5"
+                background-color=""
                   solo
                   label="Physical"
                   outlined
@@ -173,8 +174,10 @@
               <v-col cols="100"  >
                 <div class="text-right">
                         <v-btn    @click="savePatientBed" :class="{ green: !valid, teal : valid }" class="white--text  " >save</v-btn>
-                        <v-btn style="margin-left :10px;" @click="clear"  :class="{ grey: !valid, brown   : valid }" class="white--text  " >cancle
-                </v-btn> 
+                        <v-btn style="margin-left :10px;" @click="clear"  :class="{ grey: !valid, brown   : valid }" class="white--text  " >cancle</v-btn> 
+                        <b-button style="margin-left :10px;">
+                            <router-link to="/ViewBedData"><v-btn color="pink lighten-3"  class="white--text">View Data</v-btn></router-link>
+                        </b-button>
                   </div>
              
               </v-col>        
@@ -284,7 +287,7 @@ export default {
           this.patientBed.patientRoomId = "";
           this.patientBed.physicalBedId = "";
           this.patientBed.detail = "";
-          this.$router.push('/Suc');
+          this.$router.push('/bedsuccess');
         })
         .catch(e => {
           console.log(e);
