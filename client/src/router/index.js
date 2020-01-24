@@ -15,6 +15,7 @@ import nutr from '../components/Nutritionost';
 import nurselogin from '../components/NurseLogin';
 import nurse from '../components/Nurse';
 import LoginAdmin from '../components/LoginAdmin';
+import ViewPersonnel from '../components/ViewPersonnel';
 import Suc from '../components/Succcsess';
 Vue.use(Router);
 
@@ -82,6 +83,10 @@ export default new Router({
         ,{
             path: '/viewregis',
             component: viewRegister
+        }
+        ,{
+            path: '/viewpersonnel',
+            component: ViewPersonnel
         }
     ]
 });
