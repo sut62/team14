@@ -133,7 +133,7 @@ public class RegisterTests {
         disease.setLifespan(lifespan);
         disease.setPersonnel(personnel);
         disease = diseaseRepository.saveAndFlush(disease);
-        //===========================================================//
+        //=======================Register====================================//
         Bloodtype bloodtypename = new Bloodtype();
         bloodtypename.setBlood_name("A");
         bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
@@ -167,7 +167,7 @@ public class RegisterTests {
         
         
     }
-    /*@Test
+    @Test
     void B6001902_testNameMustNotBeNull() {
         //========================Personnel=================================//
         Educationlevel level = new Educationlevel();
@@ -193,7 +193,6 @@ public class RegisterTests {
         personnel.setLevel(level);
         personnel = personnelRepository.saveAndFlush(personnel);
         //====================================BedTest===============================
-        //set Data for subEntity
         PatientZone patientZone = new PatientZone();
         patientZone.setName("A1");
         patientZone = patientZoneRepository.saveAndFlush(patientZone);
@@ -215,9 +214,24 @@ public class RegisterTests {
         patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
         patientBed.setShow("test");
         patientBed = patientBedRepository.saveAndFlush(patientBed);
-        //===========================================================//
-        //===========================================================//
 
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
                 
         Bloodtype bloodtypename = new Bloodtype();
         bloodtypename.setBlood_name("A");
@@ -236,6 +250,7 @@ public class RegisterTests {
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
         register.setPatname(patientBed);
+        register.setDesname(disease);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
         // result ต้องมี error 1 ค่าเท่านั้น
@@ -273,7 +288,6 @@ public class RegisterTests {
         personnel.setLevel(level);
         personnel = personnelRepository.saveAndFlush(personnel);
         //====================================BedTest===============================
-        //set Data for subEntity
         PatientZone patientZone = new PatientZone();
         patientZone.setName("A1");
         patientZone = patientZoneRepository.saveAndFlush(patientZone);
@@ -295,8 +309,24 @@ public class RegisterTests {
         patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
         patientBed.setShow("test");
         patientBed = patientBedRepository.saveAndFlush(patientBed);
-        //===========================================================//
-        //===========================================================//
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
 
         Bloodtype bloodtypename = new Bloodtype();
         bloodtypename.setBlood_name("A");
@@ -315,6 +345,7 @@ public class RegisterTests {
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
         register.setPatname(patientBed);
+        register.setDesname(disease);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
         // result ต้องมี error 1 ค่าเท่านั้น
@@ -352,7 +383,6 @@ public class RegisterTests {
         personnel.setLevel(level);
         personnel = personnelRepository.saveAndFlush(personnel);
         //====================================BedTest===============================
-        //set Data for subEntity
         PatientZone patientZone = new PatientZone();
         patientZone.setName("A1");
         patientZone = patientZoneRepository.saveAndFlush(patientZone);
@@ -374,8 +404,24 @@ public class RegisterTests {
         patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
         patientBed.setShow("test");
         patientBed = patientBedRepository.saveAndFlush(patientBed);
-        //===========================================================//
-        //===========================================================//
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
 
                 
         Bloodtype bloodtypename = new Bloodtype();
@@ -395,6 +441,7 @@ public class RegisterTests {
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
         register.setPatname(patientBed);
+        register.setDesname(disease);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
         // result ต้องมี error 1 ค่าเท่านั้น
@@ -431,7 +478,6 @@ public class RegisterTests {
         personnel.setLevel(level);
         personnel = personnelRepository.saveAndFlush(personnel);
         //====================================BedTest===============================
-        //set Data for subEntity
         PatientZone patientZone = new PatientZone();
         patientZone.setName("A1");
         patientZone = patientZoneRepository.saveAndFlush(patientZone);
@@ -453,7 +499,24 @@ public class RegisterTests {
         patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
         patientBed.setShow("test");
         patientBed = patientBedRepository.saveAndFlush(patientBed);
-        //===========================================================//   
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//   
         Bloodtype bloodtypename = new Bloodtype();
         bloodtypename.setBlood_name("A");
         bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
@@ -471,6 +534,7 @@ public class RegisterTests {
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
         register.setPatname(patientBed);
+        register.setDesname(disease);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
         // result ต้องมี error 1 ค่าเท่านั้น
@@ -482,7 +546,7 @@ public class RegisterTests {
         assertEquals("telephone", v.getPropertyPath().toString());
     }
     @Test
-    void B6001902_testAgeNotMoreThanTo200Age() { // ใส่ข้อมูลปกติ
+    void B6001902_testAgeNotMoreThanTo200Age() {
         //========================Personnel=================================//
         Educationlevel level = new Educationlevel();
         level.setEducationlevel_name("Bachelor of Arts");
@@ -507,7 +571,6 @@ public class RegisterTests {
         personnel.setLevel(level);
         personnel = personnelRepository.saveAndFlush(personnel);
         //====================================BedTest===============================
-        //set Data for subEntity
         PatientZone patientZone = new PatientZone();
         patientZone.setName("A1");
         patientZone = patientZoneRepository.saveAndFlush(patientZone);
@@ -529,8 +592,24 @@ public class RegisterTests {
         patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
         patientBed.setShow("test");
         patientBed = patientBedRepository.saveAndFlush(patientBed);
-        //===========================================================//
-        //===========================================================//
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
                 
         Bloodtype bloodtypename = new Bloodtype();
         bloodtypename.setBlood_name("A");
@@ -548,6 +627,7 @@ public class RegisterTests {
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
         register.setPatname(patientBed);
+        register.setDesname(disease);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
         // result ต้องมี error 1 ค่าเท่านั้น
@@ -557,7 +637,467 @@ public class RegisterTests {
         final ConstraintViolation<Register> v = result.iterator().next();
         assertEquals("must be less than or equal to 200", v.getMessage());
         assertEquals("addage", v.getPropertyPath().toString());
-    }*/
+    }
+    void B6001902_testPersonnelComBoBoxMustNotBeNull() {
+        //========================Personnel=================================//
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+        
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+        
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+        //====================================BedTest===============================
+        PatientZone patientZone = new PatientZone();
+        patientZone.setName("A1");
+        patientZone = patientZoneRepository.saveAndFlush(patientZone);
+
+        PatientRoom patientRoom = new PatientRoom();
+        patientRoom.setName("Normal Room");
+        patientRoom = patientRoomRepository.saveAndFlush(patientRoom);
+
+        PhysicalBed physicalBed = new PhysicalBed();
+        physicalBed.setName("Aluminum");
+        physicalBed = physicalBedRepository.saveAndFlush(physicalBed);
+
+        //Use Data in subEntity to combobox
+        PatientBed patientBed = new PatientBed();
+        patientBed.setCreatedBy(personnel);//use personnel to set data hai combobox
+        patientBed.setAtZone(patientZone);
+        patientBed.setAtRoom(patientRoom);
+        patientBed.setPhysicalBed(physicalBed);
+        patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        patientBed.setShow("test");
+        patientBed = patientBedRepository.saveAndFlush(patientBed);
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
+                
+        Bloodtype bloodtypename = new Bloodtype();
+        bloodtypename.setBlood_name("A");
+        bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
+
+        Gender gendername = new Gender();
+        gendername.setGen_name("Man");
+        gendername = genderRepository.saveAndFlush(gendername);
+        final Register register = new Register();
+        register.setAddname("Wattana");
+        register.setAddlastname("Chaiyakun");
+        register.setTelephone("0902172445");
+        register.setAddage(201);
+        register.setCreatedby(null);
+        register.setGendername(gendername);
+        register.setBloodtypename(bloodtypename);
+        register.setPatname(patientBed);
+        register.setDesname(disease);
+        final Set<ConstraintViolation<Register>> result = validator.validate(register);
+
+        // result ต้องมี error 1 ค่าเท่านั้น
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        final ConstraintViolation<Register> v = result.iterator().next();
+        assertEquals("must be less than or equal to 200", v.getMessage());
+        assertEquals("createdby", v.getPropertyPath().toString());
+    }
+    void B6001902_testGenderComBoBoxMustNotBeNull() {
+        //========================Personnel=================================//
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+        
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+        
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+        //====================================BedTest===============================
+        PatientZone patientZone = new PatientZone();
+        patientZone.setName("A1");
+        patientZone = patientZoneRepository.saveAndFlush(patientZone);
+
+        PatientRoom patientRoom = new PatientRoom();
+        patientRoom.setName("Normal Room");
+        patientRoom = patientRoomRepository.saveAndFlush(patientRoom);
+
+        PhysicalBed physicalBed = new PhysicalBed();
+        physicalBed.setName("Aluminum");
+        physicalBed = physicalBedRepository.saveAndFlush(physicalBed);
+
+        //Use Data in subEntity to combobox
+        PatientBed patientBed = new PatientBed();
+        patientBed.setCreatedBy(personnel);//use personnel to set data hai combobox
+        patientBed.setAtZone(patientZone);
+        patientBed.setAtRoom(patientRoom);
+        patientBed.setPhysicalBed(physicalBed);
+        patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        patientBed.setShow("test");
+        patientBed = patientBedRepository.saveAndFlush(patientBed);
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
+                
+        Bloodtype bloodtypename = new Bloodtype();
+        bloodtypename.setBlood_name("A");
+        bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
+
+        Gender gendername = new Gender();
+        gendername.setGen_name("Man");
+        gendername = genderRepository.saveAndFlush(gendername);
+        final Register register = new Register();
+        register.setAddname("Wattana");
+        register.setAddlastname("Chaiyakun");
+        register.setTelephone("0902172445");
+        register.setAddage(201);
+        register.setCreatedby(createdby);
+        register.setGendername(null);
+        register.setBloodtypename(bloodtypename);
+        register.setPatname(patname);
+        register.setDesname(disease);
+        final Set<ConstraintViolation<Register>> result = validator.validate(register);
+
+        // result ต้องมี error 1 ค่าเท่านั้น
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        final ConstraintViolation<Register> v = result.iterator().next();
+        assertEquals("must be less than or equal to 200", v.getMessage());
+        assertEquals("gendername", v.getPropertyPath().toString());
+    }
+    void B6001902_testBloodtypeComBoBoxMustNotBeNull() {
+        //========================Personnel=================================//
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+        
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+        
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+        //====================================BedTest===============================
+        PatientZone patientZone = new PatientZone();
+        patientZone.setName("A1");
+        patientZone = patientZoneRepository.saveAndFlush(patientZone);
+
+        PatientRoom patientRoom = new PatientRoom();
+        patientRoom.setName("Normal Room");
+        patientRoom = patientRoomRepository.saveAndFlush(patientRoom);
+
+        PhysicalBed physicalBed = new PhysicalBed();
+        physicalBed.setName("Aluminum");
+        physicalBed = physicalBedRepository.saveAndFlush(physicalBed);
+
+        //Use Data in subEntity to combobox
+        PatientBed patientBed = new PatientBed();
+        patientBed.setCreatedBy(personnel);//use personnel to set data hai combobox
+        patientBed.setAtZone(patientZone);
+        patientBed.setAtRoom(patientRoom);
+        patientBed.setPhysicalBed(physicalBed);
+        patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        patientBed.setShow("test");
+        patientBed = patientBedRepository.saveAndFlush(patientBed);
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
+                
+        Bloodtype bloodtypename = new Bloodtype();
+        bloodtypename.setBlood_name("A");
+        bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
+
+        Gender gendername = new Gender();
+        gendername.setGen_name("Man");
+        gendername = genderRepository.saveAndFlush(gendername);
+        final Register register = new Register();
+        register.setAddname("Wattana");
+        register.setAddlastname("Chaiyakun");
+        register.setTelephone("0902172445");
+        register.setAddage(201);
+        register.setCreatedby(createdby);
+        register.setGendername(gendername);
+        register.setBloodtypename(null);
+        register.setPatname(patientBed);
+        register.setDesname(disease);
+        final Set<ConstraintViolation<Register>> result = validator.validate(register);
+
+        // result ต้องมี error 1 ค่าเท่านั้น
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        final ConstraintViolation<Register> v = result.iterator().next();
+        assertEquals("must be less than or equal to 200", v.getMessage());
+        assertEquals("bloodtypename", v.getPropertyPath().toString());
+    }
+    void B6001902_testPatientBedComBoBoxMustNotBeNull() {
+        //========================Personnel=================================//
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+        
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+        
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+        //====================================BedTest===============================
+        PatientZone patientZone = new PatientZone();
+        patientZone.setName("A1");
+        patientZone = patientZoneRepository.saveAndFlush(patientZone);
+
+        PatientRoom patientRoom = new PatientRoom();
+        patientRoom.setName("Normal Room");
+        patientRoom = patientRoomRepository.saveAndFlush(patientRoom);
+
+        PhysicalBed physicalBed = new PhysicalBed();
+        physicalBed.setName("Aluminum");
+        physicalBed = physicalBedRepository.saveAndFlush(physicalBed);
+
+        //Use Data in subEntity to combobox
+        PatientBed patientBed = new PatientBed();
+        patientBed.setCreatedBy(personnel);//use personnel to set data hai combobox
+        patientBed.setAtZone(patientZone);
+        patientBed.setAtRoom(patientRoom);
+        patientBed.setPhysicalBed(physicalBed);
+        patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        patientBed.setShow("test");
+        patientBed = patientBedRepository.saveAndFlush(patientBed);
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
+                
+        Bloodtype bloodtypename = new Bloodtype();
+        bloodtypename.setBlood_name("A");
+        bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
+
+        Gender gendername = new Gender();
+        gendername.setGen_name("Man");
+        gendername = genderRepository.saveAndFlush(gendername);
+        final Register register = new Register();
+        register.setAddname("Wattana");
+        register.setAddlastname("Chaiyakun");
+        register.setTelephone("0902172445");
+        register.setAddage(201);
+        register.setCreatedby(createdby);
+        register.setGendername(gendername);
+        register.setBloodtypename(bloodtypename);
+        register.setPatname(null);
+        register.setDesname(disease);
+        final Set<ConstraintViolation<Register>> result = validator.validate(register);
+
+        // result ต้องมี error 1 ค่าเท่านั้น
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        final ConstraintViolation<Register> v = result.iterator().next();
+        assertEquals("must be less than or equal to 200", v.getMessage());
+        assertEquals("patientBed", v.getPropertyPath().toString());
+    }
+    void B6001902_testDiseaseComBoBoxMustNotBeNull() {
+        //========================Personnel=================================//
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+        
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+        
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+        //====================================BedTest===============================
+        PatientZone patientZone = new PatientZone();
+        patientZone.setName("A1");
+        patientZone = patientZoneRepository.saveAndFlush(patientZone);
+
+        PatientRoom patientRoom = new PatientRoom();
+        patientRoom.setName("Normal Room");
+        patientRoom = patientRoomRepository.saveAndFlush(patientRoom);
+
+        PhysicalBed physicalBed = new PhysicalBed();
+        physicalBed.setName("Aluminum");
+        physicalBed = physicalBedRepository.saveAndFlush(physicalBed);
+
+        //Use Data in subEntity to combobox
+        PatientBed patientBed = new PatientBed();
+        patientBed.setCreatedBy(personnel);//use personnel to set data hai combobox
+        patientBed.setAtZone(patientZone);
+        patientBed.setAtRoom(patientRoom);
+        patientBed.setPhysicalBed(physicalBed);
+        patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        patientBed.setShow("test");
+        patientBed = patientBedRepository.saveAndFlush(patientBed);
+
+        //=========================== Disease================================//
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        disease = diseaseRepository.saveAndFlush(disease);
+        //=======================Register====================================//
+                
+        Bloodtype bloodtypename = new Bloodtype();
+        bloodtypename.setBlood_name("A");
+        bloodtypename = bloodtypeRepository.saveAndFlush(bloodtypename);
+
+        Gender gendername = new Gender();
+        gendername.setGen_name("Man");
+        gendername = genderRepository.saveAndFlush(gendername);
+        final Register register = new Register();
+        register.setAddname("Wattana");
+        register.setAddlastname("Chaiyakun");
+        register.setTelephone("0902172445");
+        register.setAddage(201);
+        register.setCreatedby(createdby);
+        register.setGendername(gendername);
+        register.setBloodtypename(bloodtypename);
+        register.setPatname(patname);
+        register.setDesname(null);
+        final Set<ConstraintViolation<Register>> result = validator.validate(register);
+
+        // result ต้องมี error 1 ค่าเท่านั้น
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        final ConstraintViolation<Register> v = result.iterator().next();
+        assertEquals("must be less than or equal to 200", v.getMessage());
+        assertEquals("disease", v.getPropertyPath().toString());
+    }
 }
 
 
