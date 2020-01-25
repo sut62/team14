@@ -35,8 +35,8 @@ public class PatientRoom {
 	// mappedBy  = "atRoom"
 	private Collection<PatientBed> patientBedRoom; //map from PatientBed - patientBedRoom is in PatientBed
 
-	public String setName(String room_name){
+	public void setName(String room_name){
 		this.room_name=room_name;
-		return room_name;
+	
 	}
 }

@@ -34,8 +34,8 @@ public class PatientZone {
     // mappedBy  = "atZone"
     private Collection<PatientBed> patientBedZone;//map from PatientBed - patientBedZone is in PatientBed
 
-    public String setName(String zone_name){
+    public void setName(String zone_name){
       this.zone_name=zone_name;
-      return zone_name;
+     
     }
 }

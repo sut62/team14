@@ -5,15 +5,12 @@ import order from '../components/FoodOrder';
 import Food from '../components/Food';
 import viewFood from '../components/viewFood';
 import PatientBed from '../components/PatientBed';
-import logdis from '../components/LoginDisease';
 import dis from '../components/newDisease';
 import Register from '../components/Register';
 import viewRegister from '../components/viewRegister';
-import Loginregis from '../components/LoginMedical records';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import Em2 from '../components/Em2';
-import nurselogin from '../components/NurseLogin';
 import nurse from '../components/Nurse';
 import LoginAdmin from '../components/LoginAdmin';
 import ViewPersonnel from '../components/ViewPersonnel';
@@ -40,10 +37,7 @@ export default new Router({
             path: '/dis',
             component: dis
        },
-       {
-            path: '/logdis',
-            component: logdis
-        },
+      
        {
             path: '/Food',
             component: Food
@@ -68,15 +62,8 @@ export default new Router({
             path: '/Em2',
             component: Em2
         },{
-            path: '/nurselogin',
-            component: nurselogin
-        },{
             path: '/nurse',
             component: nurse
-        }
-        ,{
-            path: '/loginregis',
-            component: Loginregis
         }
         ,{
             path: '/Admin',

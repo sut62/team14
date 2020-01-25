@@ -42,28 +42,28 @@ public class PatientBed {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private Personnel createdBy; //createdBy is in Personnel
+    private   @NotNull Personnel createdBy; //createdBy is in Personnel
 
 
 
    @ManyToOne(fetch = FetchType.EAGER,targetEntity = PatientZone.class)
    @JoinColumn(name = "ZONE_ID",insertable = true)
-   private  PatientZone atZone; //is in PatientZone 
+   private    @NotNull PatientZone atZone; //is in PatientZone 
     
 
    @ManyToOne(fetch = FetchType.EAGER, targetEntity = PatientRoom.class)
    @JoinColumn(name = "ROOM_ID", insertable = true)
-    private PatientRoom atRoom; 
+    private   @NotNull PatientRoom atRoom; 
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = PhysicalBed.class)
     @JoinColumn(name = "PHYSICALBED_ID", insertable = true)
-    private PhysicalBed physicalBed; 
+    private   @NotNull PhysicalBed physicalBed; 
 
     
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Register> regis;
-    @NotNull
-    @Size(min = 1, max = 100)
+   @NotNull
+    @Size(min = 1, max = 200)
     private String detail;
     @NotNull
     private String show;
