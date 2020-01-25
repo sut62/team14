@@ -83,4 +83,5 @@ public class DiseaseTests {
         assertEquals("size must be between 1 and 70", v.getMessage());
         assertEquals("name", v.getPropertyPath().toString());
     }
+     
 }
