@@ -807,10 +807,10 @@ public class RegisterTests {
         register.setAddlastname("Chaiyakun");
         register.setTelephone("0902172445");
         register.setAddage(201);
-        register.setCreatedby(createdby);
+        register.setCreatedby(personnel);
         register.setGendername(null);
         register.setBloodtypename(bloodtypename);
-        register.setPatname(patname);
+        register.setPatname(patientBed);
         register.setDesname(disease);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
@@ -899,7 +899,7 @@ public class RegisterTests {
         register.setAddlastname("Chaiyakun");
         register.setTelephone("0902172445");
         register.setAddage(201);
-        register.setCreatedby(createdby);
+        register.setCreatedby(personnel);
         register.setGendername(gendername);
         register.setBloodtypename(null);
         register.setPatname(patientBed);
@@ -991,7 +991,7 @@ public class RegisterTests {
         register.setAddlastname("Chaiyakun");
         register.setTelephone("0902172445");
         register.setAddage(201);
-        register.setCreatedby(createdby);
+        register.setCreatedby(personnel);
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
         register.setPatname(null);
@@ -1083,10 +1083,10 @@ public class RegisterTests {
         register.setAddlastname("Chaiyakun");
         register.setTelephone("0902172445");
         register.setAddage(201);
-        register.setCreatedby(createdby);
+        register.setCreatedby(personnel);
         register.setGendername(gendername);
         register.setBloodtypename(bloodtypename);
-        register.setPatname(patname);
+        register.setPatname(patientBed);
         register.setDesname(null);
         final Set<ConstraintViolation<Register>> result = validator.validate(register);
 
