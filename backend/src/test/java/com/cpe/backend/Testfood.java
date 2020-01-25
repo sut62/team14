@@ -50,30 +50,6 @@ public class Testfood {
     }
 
 
-
-    @Test
-    void B6021726_testSize3() {
-        Food name= new Food();
-        name.setName("123");
-
-        Set<ConstraintViolation<Food>> result = validator.validate(name);
-        assertEquals(1, result.size());
-        ConstraintViolation<Food> v = result.iterator().next();
-        assertEquals("size must be between 4 and 20", v.getMessage());
-        assertEquals("name",v.getPropertyPath().toString());
-    }
-    @Test
-    void B6021726_testSize21() {
-        Food name= new Food();
-        name.setName("123456789012345678901");
-
-        Set<ConstraintViolation<Food>> result = validator.validate(name);
-        assertEquals(1, result.size());
-
-        ConstraintViolation<Food> v = result.iterator().next();
-        assertEquals("size must be between 4 and 20", v.getMessage());
-        assertEquals("name",v.getPropertyPath().toString());
-    }
     @Test
     void b6021726_testFoodOKWithNotbeNull() {
         Food name = new Food();
@@ -85,6 +61,41 @@ public class Testfood {
         ConstraintViolation<Food> v = result.iterator().next();
         assertEquals("must not be null", v.getMessage());
         assertEquals("name", v.getPropertyPath().toString());
+    }
+    @Test
+    void B6021726_testSize3() {
+        Food name= new Food();
+        name.setName("กกก");
+
+        Set<ConstraintViolation<Food>> result = validator.validate(name);
+        assertEquals(1, result.size());
+        ConstraintViolation<Food> v = result.iterator().next();
+        assertEquals("must match \"\\D{4,20}\"", v.getMessage());
+        assertEquals("name",v.getPropertyPath().toString());
+    }
+    @Test
+    void B6021726_testSize21() {
+        Food name = new Food();
+        name.setName("กกกกกกกกกกกกกกกกกกกกก");
+
+        Set<ConstraintViolation<Food>> result = validator.validate(name);
+        assertEquals(1, result.size());
+
+        ConstraintViolation<Food> v = result.iterator().next();
+        assertEquals("must match \"\\D{4,20}\"", v.getMessage());
+        assertEquals("name",v.getPropertyPath().toString());
+    }
+    @Test
+    void B6021726_testFoodMustNotBeDigi() {
+        Food name = new Food();
+        name.setName("ข้าวต้ม1");
+        
+        Set<ConstraintViolation<Food>> result = validator.validate(name);
+        assertEquals(1, result.size());
+
+        ConstraintViolation<Food> v = result.iterator().next();
+        assertEquals("must match \"\\D{4,20}\"", v.getMessage());
+        assertEquals("name",v.getPropertyPath().toString());
     }
 
 }

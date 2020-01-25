@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Personnel from '../components/Personnel';
 import order from '../components/FoodOrder';
 import Food from '../components/Food';
+import viewFood from '../components/viewFood';
 import PatientBed from '../components/PatientBed';
 import logdis from '../components/LoginDisease';
 import dis from '../components/newDisease';
@@ -87,6 +88,9 @@ export default new Router({
         ,{
             path: '/viewregis',
             component: viewRegister
+        },{
+            path: '/viewFood',
+            component: viewFood
         }
         ,{
             path: '/viewpersonnel',

@@ -94,12 +94,12 @@ public class BackendApplication {
 				bloodtypeRepository.save(bloodtype);
 			});
 
-			Stream.of("อาหารอ่อน", "อาหารน้ำ").forEach(type -> {
+			Stream.of("อาหารอ่อน", "อาหารน้ำ","อาหารธรรมดา").forEach(type -> {
 				Foodtype foodtype = new Foodtype(); 
 				foodtype.setType(type);
 				foodtypeRepository.save(foodtype);
 			});
-				Stream.of("เช้า", "เย็น").forEach(mealtype -> {
+				Stream.of("เช้า","กลางวัน", "เย็น").forEach(mealtype -> {
 				Meal meal = new Meal(); 
 				meal.setMealtype(mealtype); 
 				mealRepository.save(meal); 
