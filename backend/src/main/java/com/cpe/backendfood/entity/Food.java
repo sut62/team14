@@ -41,16 +41,16 @@ public class Food {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity =Foodtype.class)
     @JoinColumn(name = "FoodtypeID", insertable = true)
-    private Foodtype typeby;
+    private @NotNull Foodtype typeby;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Meal.class)
     @JoinColumn(name = "MealID", insertable = true)
-    private Meal mealby;
+    private @NotNull Meal mealby;
 
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<FoodOrder> order;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private Personnel createdby;
+    private @NotNull Personnel createdby;
 }

@@ -85,7 +85,7 @@
                 <v-btn @click="saveFood" :class="{ red: !valid, green: valid }">save</v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
                 <router-link to="/viewFood"><v-btn class="ma-2" outlined color="blue darken-1">Show</v-btn></router-link>
-                <router-link to="/Food"><v-btn class="ma-2" outlined color="blue darken-1">Back</v-btn></router-link>
+                <router-link to="/Em2"><v-btn class="ma-2" outlined color="blue darken-1">Back</v-btn></router-link>
       
               </v-col>
             </v-row>
