@@ -32,4 +32,7 @@ public class LifeSpan {
 	}
 	@OneToMany(fetch = FetchType.EAGER)
 	private Collection<Disease> disease ;
+
+	public void setLifeSpan(String string) {
+	}
 }

@@ -41,18 +41,22 @@ public class Disease {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Type.class)
     @JoinColumn(name = "TYPE_ID", insertable = true)
+    @NotNull
     private Type type;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = LifeSpan.class)
     @JoinColumn(name = "LIFESPAN_ID", insertable = true)
+    @NotNull
     private LifeSpan lifespan;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
+    @NotNull
     private Personnel personnel;
     
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Register> regis;
+
 	
 
 }
