@@ -104,7 +104,7 @@
             </v-row>
                 <v-row justify="center">
               <v-col cols="12">
-                <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก</v-btn>
+                <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก<v-icon right>mdi-content-save</v-icon></v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
                 <b-button style="margin-left: 15px;">
         </b-button>
@@ -149,7 +149,6 @@ export default {
       personnels:[],
       diseases:[],
       patientbeds:[],
-
       valid: false
     };
   },
