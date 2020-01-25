@@ -3,8 +3,7 @@
     <v-row justify="center">
       <v-col cols="12">
           <v-toolbar color=blue light flat>
-                <v-chip class="display-1" color="white" outlined pill large >ข้อมูลเมนูอาหาร
-    </v-chip>
+                <v-chip class="display-1" color="white" outlined pill large >ข้อมูลเมนูอาหาร</v-chip>
     <v-spacer></v-spacer>
                 <div class="flex-grow-1"></div>
               </v-toolbar>
