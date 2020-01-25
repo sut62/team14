@@ -27,7 +27,7 @@
                   :rules="[(v) => !!v || 'Item is required']"
                   required
 
-                ><v-icon slot="prepend" color="black" >mdi-food</v-icon></v-text-field>
+                ><v-icon slot="prepend" color="black" >mdi-food</v-icon>
                 </v-select>
               </v-col>
             </v-row>
@@ -43,7 +43,7 @@
                   item-value="id"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
-                ><v-icon slot="prepend" color="black" >mdi-folder-account</v-icon></v-text-field>
+                ><v-icon slot="prepend" color="black" >mdi-folder-account</v-icon>
                 </v-select>
               </v-col>
             </v-row>
@@ -59,7 +59,7 @@
                        item-value="id"
                        :rules="[(v) => !!v || 'Item is required']"
                        required
-                    ><v-icon slot="prepend" color="black" >mdi-account-box</v-icon></v-text-field>
+                    ><v-icon slot="prepend" color="black" >mdi-account-box</v-icon>
                     </v-select>
                  </v-col>
               </v-row>
@@ -78,6 +78,7 @@
                 <v-col cols="12">
                     <v-btn @click="saveOrder" :class="{ red: !valid, green: valid }">save</v-btn>
                     <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
+                    <b-button><router-link to="/vieworder"><v-btn color="blue" style="margin-left: 15px;" >show</v-btn></router-link></b-button>
                 </v-col>
              </v-row>
             <br />

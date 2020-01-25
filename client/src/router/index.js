@@ -19,7 +19,7 @@ import ViewPersonnel from '../components/ViewPersonnel';
 import Suc from '../components/Succcsess';
 import BedSuccess from '../components/BedSuccess';
 import ViewBedData from '../components/ViewBedData';
-
+import viewOrder from '../components/ViewOrderData';
 Vue.use(Router);
 
 export default new Router({
@@ -29,9 +29,10 @@ export default new Router({
             path: '/per',
             component: Personnel
         },
+
         {
-             path: '/order',
-             component: order
+              path: '/order',
+              component: order
         },
         {
             path: '/dis',
@@ -96,7 +97,11 @@ export default new Router({
         },{
             path: '/ViewBedData',
             component: ViewBedData
-        }
-        
+        },
+        {
+            path: '/vieworder',
+            component: viewOrder
+       },
+
     ]
 });
