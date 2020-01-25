@@ -43,13 +43,13 @@ public class FoodOrder {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Food.class)
     @JoinColumn(name = "Food_ID", insertable = true)
-    private Food food;
+    private @NonNull Food food;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private Personnel orderBy;
+    private @NonNull Personnel orderBy;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Register.class)
     @JoinColumn(name = "register_ID", insertable = true)
-    private Register patient;
+    private @NonNull Register patient;
 }
