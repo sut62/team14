@@ -18,7 +18,7 @@ import com.cpe.orderfood.entity.FoodOrder;
 import com.cpe.personnel.entity.Personnel;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+//import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -35,7 +35,8 @@ public class Food {
     private @NonNull Long id;
 
     @NotNull
-    @Size(min = 4,max = 20)
+    //@Size(min = 4,max = 20)
+    @Pattern(regexp = "\\D{4,20}")
     private String name;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity =Foodtype.class)
