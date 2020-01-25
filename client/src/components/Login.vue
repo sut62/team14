@@ -7,7 +7,7 @@
     <br />
     <br />
     <v-card class="mx-auto" max-width="400">
-      <v-card-title class="align-end fill-height">Nutritionost Login</v-card-title>
+      <v-card-title class="align-end fill-height">Login</v-card-title>
       <br />
       <v-row justify="center">
         <v-form ref="form" v-model="valid" lazy-validation style="width: 70%">
@@ -40,10 +40,10 @@ export default {
   },
   methods: {
       login() {
-          http.get('/loginNutritionost/'+this.username+ '/' + this.password)
+          http.get('/login/'+this.username+ '/' + this.password)
           .then(response => {
               if (response.data != []) {
-                   this.$router.push('/nutr');
+                   this.$router.push('/Em2');
                } else {
                    alert('Please try again')
                    this.$refs.form.reset();this.clear()
