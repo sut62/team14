@@ -99,10 +99,7 @@ export default {
         });
 
     },
-    /* eslint-disable no-console */
   },
-    /* eslint-disable no-console */
-  
   mounted() {
     this.getDisease();
   }

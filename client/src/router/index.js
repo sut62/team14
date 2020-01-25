@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Personnel from '../components/Personnel';
 import order from '../components/FoodOrder';
 import Food from '../components/Food';
+import viewFood from '../components/viewFood';
 import PatientBed from '../components/PatientBed';
 import logdis from '../components/LoginDisease';
 import dis from '../components/newDisease';
@@ -10,8 +11,8 @@ import Register from '../components/Register';
 import viewRegister from '../components/viewRegister';
 import Loginregis from '../components/LoginMedical records';
 import Home from '../components/Home';
-import Loginnutr from '../components/LoginNutritionost';
-import nutr from '../components/Nutritionost';
+import Login from '../components/Login';
+import Em2 from '../components/Em2';
 import nurselogin from '../components/NurseLogin';
 import nurse from '../components/Nurse';
 import LoginAdmin from '../components/LoginAdmin';
@@ -60,12 +61,12 @@ export default new Router({
             component: Home
         }
         ,{
-            path: '/loginnutr',
-            component: Loginnutr
+            path: '/login',
+            component: Login
         }
         ,{
-            path: '/nutr',
-            component: nutr
+            path: '/Em2',
+            component: Em2
         },{
             path: '/nurselogin',
             component: nurselogin
@@ -88,6 +89,9 @@ export default new Router({
         ,{
             path: '/viewregis',
             component: viewRegister
+        },{
+            path: '/viewFood',
+            component: viewFood
         }
         ,{
             path: '/viewpersonnel',

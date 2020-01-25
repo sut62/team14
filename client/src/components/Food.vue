@@ -84,7 +84,8 @@
               <v-col cols="12">
                 <v-btn @click="saveFood" :class="{ red: !valid, green: valid }">save</v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
-                <router-link to="/nutr"><v-btn class="ma-2" outlined color="blue darken-1">Back</v-btn></router-link>
+                <router-link to="/viewFood"><v-btn class="ma-2" outlined color="blue darken-1">Show</v-btn></router-link>
+                <router-link to="/Food"><v-btn class="ma-2" outlined color="blue darken-1">Back</v-btn></router-link>
       
               </v-col>
             </v-row>
@@ -174,7 +175,7 @@ export default {
         .then(response => {
           console.log(response);
           this.$refs.form.reset();
-          this.$router.push('/Suc');
+          this.$router.push('/viewFood');
         })
         
         .catch(e => {
