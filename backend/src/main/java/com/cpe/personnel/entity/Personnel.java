@@ -39,10 +39,10 @@ public class Personnel {
     private @NonNull Long id;
     private @NotNull String firstname;
     @NotNull
-    private @NotNull String lastname;
+    private  String lastname;
     @NotNull
     @Pattern(regexp = "\\d{10}")
-    private @NonNull String telephone;
+    private String telephone;
     @Past
     private @NonNull LocalDate Birthday;
     private @NonNull String password;
@@ -53,15 +53,18 @@ public class Personnel {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", insertable = true)
-    private Position posit;
+    
+    private @NotNull Position posit;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Maritalstatus.class)
     @JoinColumn(name = "MARITALSTATUS_ID", insertable = true)
-    private Maritalstatus status;
+    
+    private @NotNull Maritalstatus status;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Educationlevel.class)
     @JoinColumn(name = "EDUCATIONLEVEL_ID", insertable = true)
-    private Educationlevel level;
+    
+    private @NotNull Educationlevel level;
 
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<FoodOrder> order;
