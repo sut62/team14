@@ -5,9 +5,9 @@
   <v-container class="light-green lighten-4" >
     <v-layout text-center wrap>
       <v-flex mb-4>
-        <label class="display-2 font-weight-bold brown--text mb-3"> Add New Disease  </label>
+        <label class="display-2 font-weight-bold brown--text mb-3">Add New Disease</label>
       </v-flex>
-      
+            <v-btn @click="viewdisease" color="green"> ดูข้อมูลโรค </v-btn>
     </v-layout>
     
      <v-row justify="center">
@@ -17,7 +17,6 @@
             id ="10"
             v-model="disease.name"
             label="ชื่อโรค"
-            filled
             clearable
           ></v-text-field>
         </v-col>
@@ -30,7 +29,6 @@
             v-model="disease.symptom"
             id ="11"
             label="อาการ"
-            filled
             clearable
           ></v-text-field>
         </v-col>
@@ -82,11 +80,13 @@
             </v-row>
               <v-row  >
               <v-col cols="12">
-                <v-btn color ="blue" style="margin-left: 430px;" @click="saveDisease" > บันทึก </v-btn>
+                <v-btn color ="blue" style="margin-left: 600px;" @click="saveDisease" > บันทึก </v-btn>
                 <v-btn color ="red" style="margin-left: 20px;" @click="clear"> ยกเลิก </v-btn>
-              </v-col>
+             </v-col>
             </v-row>
- 
+            
+            
+           
   </v-container>
  </v-col>
 </v-row>
@@ -115,6 +115,9 @@ export default {
     };
   },
   methods: {
+    viewdisease(){
+      this.$router.push("/viewdis");
+    },
  
    getTypes() {
       http

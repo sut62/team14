@@ -20,13 +20,14 @@ import Suc from '../components/Succcsess';
 import BedSuccess from '../components/BedSuccess';
 import ViewBedData from '../components/ViewBedData';
 import viewOrder from '../components/ViewOrderData';
+import viewdis from '../components/ViewDisease';
 Vue.use(Router);
 
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [{
-            path: '/per',
+             path: '/per',
             component: Personnel
         },
 
@@ -102,6 +103,9 @@ export default new Router({
             path: '/vieworder',
             component: viewOrder
        },
-
+       { 
+            path: '/viewdis',
+            component: viewdis  
+       },
     ]
 });

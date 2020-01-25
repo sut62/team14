@@ -38,6 +38,11 @@ public class DiseaseController {
             this.diseaseRepository = diseaseRepository;
     }
 
+    @GetMapping("/SearchDis/{id}")   
+    public Disease SearchDis(@PathVariable("id") long id) { 
+        return diseaseRepository.findById(id);
+    }
+
     @GetMapping("/disease")
     public Collection<Disease> Diseases() {
         return diseaseRepository.findAll().stream().collect(Collectors.toList());
