@@ -35,8 +35,8 @@ public class PhysicalBed {
     // mappedBy  = "physicalBed"
     private Collection<PatientBed> havePhysical; //it map from PatientBed - havePhysical is in PatientBed
 
-   public String setName(String physBed_name){
+   public void setName(String physBed_name){
 		this.physBed_name=physBed_name;
-		return physBed_name;
+		
 	}
 }
