@@ -2,7 +2,6 @@
 <template>
   <v-container>
     <v-row justify="center">
-        
         <v-col cols="5">
              <br>
                <v-text-field v-model="id" label="กรอก ID" outlined></v-text-field>
@@ -10,13 +9,10 @@
         <v-col cols="2">
              <br>
               <div class="my-2">
-                <v-btn @click="findDis" color="green lighten-2" > ค้นหา  </v-btn>
-                
+                <v-btn @click="findDis" color="green lighten-2" > ค้นหา  </v-btn> 
               </div>
         </v-col>
       <v-col cols="12">
-
-
 
     <v-toolbar color="green accent-1" light flat>
         <v-chip class="display-1" color="brown" outlined pill large > ข้อมูลโรค <v-icon right large>mdi-hospital</v-icon></v-chip>
