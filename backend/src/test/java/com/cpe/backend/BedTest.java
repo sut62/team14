@@ -473,6 +473,68 @@ public class BedTest {
         assertEquals("size must be between 1 and 200", v.getMessage());
         assertEquals("detail", v.getPropertyPath().toString());
     }
+//****************************************************************************Pattern  detail************************************************************************* */
+
+@Test
+void b6002060_testPatternDetailOkWithNotSymbol() {
+    //====================================Personnel===============================
+    Educationlevel level = new Educationlevel();
+    level.setEducationlevel_name("Bachelor of Arts");
+    level = educationlevelRepository.saveAndFlush(level);
+
+    Maritalstatus status = new Maritalstatus();
+    status.setMaritalstatus_name("single");
+    status = maritalstatusRepository.saveAndFlush(status);
+    
+    Position posit = new Position();
+    posit.setPosition_name("Doctor");
+    posit = positionRepository.saveAndFlush(posit);
+
+    Personnel personnel = new Personnel();
+    personnel.setFirstname("sopon");
+    personnel.setLastname("phudee");
+    personnel.setTelephone("0856845611");
+    personnel.setPassword("12345648790");
+    personnel.setBirthday(LocalDate.parse("1999-01-29"));
+    personnel.setStatus(status);
+    personnel.setPosit(posit);
+    personnel.setLevel(level);
+    personnel = personnelRepository.saveAndFlush(personnel);
+
+    //====================================Me===============================
+    //set Data for subEntity
+    PatientZone patientZone = new PatientZone();
+    patientZone.setName("A1");
+    patientZone = patientZoneRepository.saveAndFlush(patientZone);
+
+    PatientRoom patientRoom = new PatientRoom();
+    patientRoom.setName("Normal Room");
+    patientRoom = patientRoomRepository.saveAndFlush(patientRoom);
+
+    PhysicalBed physicalBed = new PhysicalBed();
+    physicalBed.setName("Aluminum");
+    physicalBed = physicalBedRepository.saveAndFlush(physicalBed);
+
+    //Use Data in subEntity to combobox
+    PatientBed patientBed = new PatientBed();
+    patientBed.setCreatedBy(personnel);//use personnel to set data hai combobox
+    patientBed.setAtZone(patientZone);
+    patientBed.setAtRoom(patientRoom);
+    patientBed.setPhysicalBed(physicalBed);
+    patientBed.setDetail("//01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
+    patientBed.setShow("test");
+
+    //find number of error
+    Set<ConstraintViolation<PatientBed>> result = validator.validate(patientBed);
+
+    //compare is only one error
+    assertEquals(1, result.size());
+
+    //translate result to get message error
+    ConstraintViolation<PatientBed> v = result.iterator().next();
+    assertEquals("must match \"[ก-ฮA-Za-z0-9[+][-]]*\"", v.getMessage());
+    assertEquals("detail", v.getPropertyPath().toString());
+}
      @Test
     void b6002060_testShowMustNotBeNull(){
          //====================================Personnel===============================
