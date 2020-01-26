@@ -165,7 +165,7 @@ export default {
         .then(response => {
           console.log(response);
           this.clear();
-          this.$router.push('/Suc');
+          this.$router.push('/vieworder');
         })
         .catch(e => {
           console.log(e);
