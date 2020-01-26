@@ -106,6 +106,7 @@
               <v-col cols="12">
                 <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก<v-icon right>mdi-content-save</v-icon></v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
+                <v-btn @click="viewRegister" style="margin-left: 15px;">ดูข้อมูลผู้ป่วย</v-btn>
                 <b-button style="margin-left: 15px;">
         </b-button>
         <br/>
@@ -247,7 +248,7 @@ export default {
         .then(response => {
           console.log(response);
           this.$refs.form.reset();
-          this.$router.push('/Suc');
+          this.$router.push('/viewregis');
         })
         .catch(e => {
           console.log(e);
@@ -257,6 +258,9 @@ export default {
     },
     clear() {
       this.$refs.form.reset();
+    },
+    viewRegister(){
+      this.$router.push("/viewregis");
     },
     refreshList() {
       this.getGenders();
