@@ -19,7 +19,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.cpe.register.entity.Register;
-
+import javax.validation.constraints.Pattern;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -62,8 +62,9 @@ public class PatientBed {
     
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Register> regis;
-   @NotNull
+    @NotNull
     @Size(min = 1, max = 200)
+    @Pattern(regexp = "[ก-ฮA-Za-z0-9[+][-]]*")
     private String detail;
     @NotNull
     private String show;
