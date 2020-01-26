@@ -199,7 +199,7 @@ public class Testfood {
         Set<ConstraintViolation<Food>> result = validator.validate(name);
         assertEquals(1, result.size());
         ConstraintViolation<Food> v = result.iterator().next();
-        assertEquals("must match \"\\D{4,20}\"", v.getMessage());
+        assertEquals("size must be between 4 and 20", v.getMessage());
         assertEquals("name",v.getPropertyPath().toString());
     }
     @Test
@@ -238,7 +238,7 @@ public class Testfood {
 
 
         Food name = new Food();
-        name.setName("กกกกกกกกกกกกกกกกกกกกก");
+        name.setName("กกกกกกกกกกกกกกกกกกกกกก");
         name.setCreatedby(personnel);
         name.setTypeby(type);
         name.setMealby(meal);
@@ -247,7 +247,7 @@ public class Testfood {
         assertEquals(1, result.size());
 
         ConstraintViolation<Food> v = result.iterator().next();
-        assertEquals("must match \"\\D{4,20}\"", v.getMessage());
+        assertEquals("size must be between 4 and 20", v.getMessage());
         assertEquals("name",v.getPropertyPath().toString());
     }
     @Test
@@ -295,7 +295,7 @@ public class Testfood {
         assertEquals(1, result.size());
 
         ConstraintViolation<Food> v = result.iterator().next();
-        assertEquals("must match \"\\D{4,20}\"", v.getMessage());
+        assertEquals("must match \"[^0-9]*\"", v.getMessage());
         assertEquals("name",v.getPropertyPath().toString());
     }
      @Test
