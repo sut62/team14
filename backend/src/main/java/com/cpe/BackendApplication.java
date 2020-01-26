@@ -78,11 +78,7 @@ public class BackendApplication {
 				maritalstatus.setMaritalstatus_name(maritalstatus_name);
 				maritalstatusRepository.save(maritalstatus);
 			});
-			Stream.of("Primary", "Secondary", "Vocational ","University").forEach(educationlevel_name -> {
-				Educationlevel educationlevel = new Educationlevel();
-				educationlevel.setEducationlevel_name(educationlevel_name);
-				educationlevelRepository.save(educationlevel);
-			});
+			
 			Stream.of("Man", "Female").forEach(gen_name -> {
 				Gender gender = new Gender();
 				gender.setGen_name(gen_name);
@@ -111,6 +107,11 @@ public class BackendApplication {
 					admin.setPassword(password);
 				});
 				adminRepository.save(admin);
+			});
+			Stream.of("Primary", "Secondary", "Vocational ","University").forEach(educationlevel_name -> {
+				Educationlevel educationlevel = new Educationlevel();
+				educationlevel.setEducationlevel_name(educationlevel_name); 
+				educationlevelRepository.save(educationlevel);
 			});
 
 

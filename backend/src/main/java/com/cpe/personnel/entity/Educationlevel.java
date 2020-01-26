@@ -24,6 +24,5 @@ public class Educationlevel{
     private @NonNull String educationlevel_name;
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Personnel> personnel;
-	public void setEducationlevel_name(String string) {
-	}
+	
 }
