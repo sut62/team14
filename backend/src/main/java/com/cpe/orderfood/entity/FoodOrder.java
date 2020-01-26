@@ -13,6 +13,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,19 +38,20 @@ public class FoodOrder {
 
     @NotNull
     @Size(min = 1, max = 100)
+    @Pattern(regexp = "[ก-ฮA-Za-z0-9[+][-][*]]*")
     private String details;
     @NotNull
     private Date orderDate;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Food.class)
     @JoinColumn(name = "Food_ID", insertable = true)
-    private @NonNull Food food;
+    private @NotNull Food food;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
-    private @NonNull Personnel orderBy;
+    private @NotNull Personnel orderBy;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Register.class)
     @JoinColumn(name = "register_ID", insertable = true)
-    private @NonNull Register patient;
+    private @NotNull Register patient;
 }
