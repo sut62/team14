@@ -250,11 +250,6 @@ export default {
           this.$refs.form.reset();
           this.$router.push('/viewregis');
         })
-        .catch(e => {
-          console.log(e);
-          alert('Unsuccessful !!!')
-        });
-      
     },
     clear() {
       this.$refs.form.reset();
