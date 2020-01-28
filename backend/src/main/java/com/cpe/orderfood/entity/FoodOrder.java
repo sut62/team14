@@ -38,7 +38,7 @@ public class FoodOrder {
 
     @NotNull
     @Size(min = 1, max = 100)
-    @Pattern(regexp = "[ก-ฮA-Za-z0-9[+][-][*]]*")
+    @Pattern(regexp = "[[ก-๙][ ]A-Za-z0-9[+][-][*]]*")
     private String details;
     @NotNull
     private Date orderDate;
