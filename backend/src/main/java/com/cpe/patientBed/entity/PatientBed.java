@@ -43,7 +43,7 @@ public class PatientBed {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Personnel.class)
     @JoinColumn(name = "PERSONNEL_ID", insertable = true)
     private   @NotNull Personnel createdBy; //createdBy is in Personnel
-
+ 
 
 
    @ManyToOne(fetch = FetchType.EAGER,targetEntity = PatientZone.class)
@@ -64,7 +64,7 @@ public class PatientBed {
     private Collection<Register> regis;
     @NotNull
     @Size(min = 1, max = 200)
-    @Pattern(regexp = "[ก-ฮA-Za-z0-9[+][-]]*")
+    @Pattern(regexp = "[[ก-๙][ ]A-Za-z0-9[+][-][*]]*")
     private String detail;
     @NotNull
     private String show;

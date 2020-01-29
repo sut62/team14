@@ -98,7 +98,7 @@ public class BedTest {
         patientBed.setAtZone(patientZone);
         patientBed.setAtRoom(patientRoom);
         patientBed.setPhysicalBed(physicalBed);
-        patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        patientBed.setDetail("ขาเตียงด้านซ้ายล่างมีรอยถลอก AZaz 123");
         patientBed.setShow("test");
         patientBed = patientBedRepository.saveAndFlush(patientBed);
 
@@ -108,7 +108,7 @@ public class BedTest {
         assertEquals(patientZone, found.get().getAtZone());//use relation for link get  getAtZone in major Entity for link to sub entity
         assertEquals(patientRoom, found.get().getAtRoom());
         assertEquals(physicalBed, found.get().getPhysicalBed());
-        assertEquals("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", found.get().getDetail());
+        assertEquals("ขาเตียงด้านซ้ายล่างมีรอยถลอก AZaz 123", found.get().getDetail());
         assertEquals("test", found.get().getShow());
         
     }
@@ -138,7 +138,7 @@ public class BedTest {
           patientBed.setAtZone(patientZone);
           patientBed.setAtRoom(patientRoom);
           patientBed.setPhysicalBed(physicalBed);
-          patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+          patientBed.setDetail("**ขาเตียงด้านซ้ายล่างมีรอยถลอก AZaz 123");
           patientBed.setShow("test");
           //not use saveandflush  cause use just column maidai chai tung class
   
@@ -204,7 +204,7 @@ public class BedTest {
           patientBed.setAtZone(null);
           patientBed.setAtRoom(patientRoom);
           patientBed.setPhysicalBed(physicalBed);
-          patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+          patientBed.setDetail("**ขาเตียงด้านซ้ายล่างมีรอยถลอก AZaz 123");
           patientBed.setShow("test");
           //not use saveandflush  cause use just column maidai chai tung class
   
@@ -271,7 +271,7 @@ public class BedTest {
           patientBed.setAtZone(patientZone);
           patientBed.setAtRoom(null);
           patientBed.setPhysicalBed(physicalBed);
-          patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+          patientBed.setDetail("**ขาเตียงด้านซ้ายล่างมีรอยถลอก AZaz 123");
           patientBed.setShow("test");
           //not use saveandflush  cause use just column maidai chai tung class
   
@@ -335,7 +335,7 @@ public class BedTest {
        patientBed.setAtZone(patientZone);
        patientBed.setAtRoom(patientRoom);
        patientBed.setPhysicalBed(null);
-       patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+       patientBed.setDetail("**ขาเตียงด้านซ้ายล่างมีรอยถลอก AZaz 123");
        patientBed.setShow("test");
        //not use saveandflush  cause use just column maidai chai tung class
 
@@ -459,7 +459,7 @@ public class BedTest {
         patientBed.setAtZone(patientZone);
         patientBed.setAtRoom(patientRoom);
         patientBed.setPhysicalBed(physicalBed);
-        patientBed.setDetail("012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
+        patientBed.setDetail("ก01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
         patientBed.setShow("test");
 
         //find number of error
@@ -521,7 +521,7 @@ void b6002060_testPatternDetailOkWithNotSymbol() {
     patientBed.setAtZone(patientZone);
     patientBed.setAtRoom(patientRoom);
     patientBed.setPhysicalBed(physicalBed);
-    patientBed.setDetail("//01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
+    patientBed.setDetail("**ขาเตียงด้านซ้ายล่างมีรอยถลอก  AZaz 123.");
     patientBed.setShow("test");
 
     //find number of error
@@ -532,7 +532,7 @@ void b6002060_testPatternDetailOkWithNotSymbol() {
 
     //translate result to get message error
     ConstraintViolation<PatientBed> v = result.iterator().next();
-    assertEquals("must match \"[ก-ฮA-Za-z0-9[+][-]]*\"", v.getMessage());
+    assertEquals("must match \"[[ก-๙][ ]A-Za-z0-9[+][-][*]]*\"", v.getMessage());
     assertEquals("detail", v.getPropertyPath().toString());
 }
      @Test
@@ -581,7 +581,7 @@ void b6002060_testPatternDetailOkWithNotSymbol() {
          patientBed.setAtZone(patientZone);
          patientBed.setAtRoom(patientRoom);
          patientBed.setPhysicalBed(physicalBed);
-         patientBed.setDetail("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+         patientBed.setDetail("**ขาเตียงด้านซ้ายล่างมีรอยถลอก  AZaz 123");
          patientBed.setShow(null);
 
         Set<ConstraintViolation<PatientBed>> result = validator.validate(patientBed);
