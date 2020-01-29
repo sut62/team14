@@ -181,7 +181,7 @@ public class FoodOrderTest {
         //FoodOrder
         Date now = new Date();
         FoodOrder order = new FoodOrder();
-        order.setDetails("กขคabc+-*9012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789");
+        order.setDetails("ไม่กินผัก abc ABC 123");
         order.setOrderDate(now);
         order.setFood(food);
         order.setPatient(register);
@@ -189,7 +189,7 @@ public class FoodOrderTest {
         order = orderRepository.saveAndFlush(order);
 
         Optional<FoodOrder> found = orderRepository.findById(order.getId());
-        assertEquals("กขคabc+-*9012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", found.get().getDetails());
+        assertEquals("ไม่กินผัก abc ABC 123", found.get().getDetails());
         assertEquals(now, found.get().getOrderDate());
         assertEquals(food, found.get().getFood());
         assertEquals(register, found.get().getPatient());
@@ -541,7 +541,7 @@ public class FoodOrderTest {
         assertEquals(1, result.size());
 
         ConstraintViolation<FoodOrder> v = result.iterator().next();
-        assertEquals("must match \"[ก-ฮA-Za-z0-9[+][-][*]]*\"", v.getMessage());
+        assertEquals("must match \"[[ก-๙][ ]A-Za-z0-9[+][-][*]]*\"", v.getMessage());
         assertEquals("details", v.getPropertyPath().toString());
     }
     @Test

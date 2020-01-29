@@ -5,7 +5,8 @@
           <v-toolbar color="deep-orange accent-2" light flat>
                 <v-chip class="display-1" color="white" outlined pill large >ข้อมูลการลงทะเบียนผู้ป่วย<v-icon right large>mdi-file-document-outline</v-icon>
     </v-chip>
-    <v-spacer></v-spacer>
+    <v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer>
+     <v-btn @click="Register" class="mr-3" color="white">ลงทะเบียนผู้ป่วย<v-icon right>mdi-content-save</v-icon></v-btn>
                 <div class="flex-grow-1"></div>
               </v-toolbar>
         <v-data-table  :headers="headers" :items="items" :items-per-page="10" color="green" class="elevation-6">
@@ -56,6 +57,9 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+    Register(){
+      this.$router.push("/regis");
     },
     refreshList() {
       this.getRegister();
