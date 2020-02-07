@@ -37,15 +37,22 @@ public class Personnel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="PERSONNEL_seq")
     @Column(name = "PERSONNEL_ID", unique = true, nullable = true)
     private @NonNull Long id;
+    @Pattern(regexp = "[a-zA-Z[ก-ฮ]*]*")
+    @Size(min = 2 ,max = 100)
     private @NotNull String firstname;
     @NotNull
+    @Pattern(regexp = "[a-zA-Z[ก-ฮ]*]*")
+    @Size(min = 2 ,max = 100)
     private  String lastname;
     @NotNull
     @Pattern(regexp = "\\d{10}")
     private String telephone;
+    @NotNull
     @Past
-    private @NonNull LocalDate Birthday;
-    private @NonNull String password;
+    private LocalDate Birthday;
+    @NotNull
+    @Size(min = 2 ,max = 100)
+    private  String password;
     private @NonNull String fullname;
     
 

@@ -33,7 +33,6 @@ export default {
         },
         { text: "ชื่อพนักงาน" , value: "createdby.fullname"},
         { text: "ชื่อผู้ป่วย", value: "fullname"},
-        { text: "นามสกุล", value: "addlastname"},
         { text: "อายุ", value: "addage"},
         { text: "เบอร์โทรศัพท์", value: "telephone"},
         { text: "เพศ", value: "gendername.gen_name" },

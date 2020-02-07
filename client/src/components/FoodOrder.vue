@@ -65,14 +65,28 @@
               </v-row>
 
              <v-row >
+
+             <v-col cols="10">
                 <v-textarea
-                      id ="12"
+                      id ="text-details"
                       name="orderFood.details"
                       v-model="orderFood.details"
                       filled
                       label="รายละเอียดเพิ่มเติม"
                       auto-grow
                     ></v-textarea>
+            </v-col>
+
+            </v-row >
+
+            <v-row >
+            <div v-if="dataNull">
+            <v-col cols="10">
+            <v-alert dense border="left" type="warning">
+                 กรุณาใส่ข้อมูลให้ครบและถูกต้อง
+            </v-alert>
+            </v-col>
+            </div>
             </v-row>
             <v-row justify="center">
                 <v-col cols="12">
@@ -103,9 +117,11 @@ export default {
         bedId: "",
         details:""
       },
+      dataNull: false,
       food:[],
       patient:[],
       employee:[]
+
 
     };
 
@@ -151,29 +167,35 @@ export default {
         },
     // function เมื่อกดปุ่ม submit
     saveOrder() {
-      http
-        .post(
-          "/foodorder/"+
-            this.orderFood.foodId +
-            "/" +
-            this.orderFood.bedId +
-            "/" +
-            this.orderFood.emId +
-             "/" +
-            this.orderFood.details
-        )
-        .then(response => {
-          console.log(response);
-          this.clear();
-          this.$router.push('/vieworder');
-        })
-        .catch(e => {
-          console.log(e);
-        });
+        if (
+            !this.orderFood.foodId ||
+            !this.orderFood.bedId ||
+            !this.orderFood.emId ||
+            !this.orderFood.details) {
+                this.dataNull = true;
+                // alert("กรุณาเลือกข้อมูลให้ครบ!");
+                this.clear();
+        } else {
+            http
+              .post(
+                 "/foodorder/"+
+                  this.orderFood.foodId +
+                  "/" +
+                  this.orderFood.bedId +
+                  "/" +
+                   this.orderFood.emId +
+                  "/" +
+                  this.orderFood.details)
+              .then(response => {
+                  console.log(response);
+                  this.clear();
+                  this.$router.push('/vieworder');
+                  })
+              .catch(e => {
+                  console.log(e);
+                   });
+              }
 
-       if(this.datePicker!="null"){
-      this.submitted = true;
-       }
     },
     clear() {
       this.$refs.form.reset();
