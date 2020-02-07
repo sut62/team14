@@ -94,7 +94,6 @@ methods: {
                 console.log(this.items);
                 //this.$router.push('/findBed');
           } else {
-          alert('No Data')
                 this.items = [];
                 console.log(this.items);
             this.$refs.form.reset();this.clear()
