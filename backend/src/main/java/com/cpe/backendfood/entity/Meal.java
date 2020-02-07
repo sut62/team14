@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -22,7 +23,7 @@ public class Meal {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="meal_SEQ")
     @Column(name="id",unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String mealtype;
+    private @NotNull String mealtype;
 
     @OneToMany(fetch = FetchType.EAGER)
     // mappedBy  = "settype"

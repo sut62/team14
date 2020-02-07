@@ -13,12 +13,15 @@
       <v-col cols="4">
         <v-form v-model="valid" ref="form" >
           
+                <div v-if="fail">
+                  <v-alert type="error"> ใส่ข้อมูลไม่ถูกต้อง  </v-alert>
+                </div>
 
           <div>
           <v-row>
             <v-col cols="10">
              <v-text-field
-                id ="13"
+                id ="name"
                 outlined
                 label="Food name"
                 v-model="food.Name"
@@ -120,7 +123,8 @@ export default {
       Personnels:[],
       Foodtypes:[],
       Meals:[],
-      valid: false
+      valid: false,
+      fail: false,
     };
   },
   methods: {
@@ -160,6 +164,18 @@ export default {
     },
 
     saveFood() {
+        if (
+        !this.food.Name ||
+        !this.food.personnel ||
+        !this.food.foodtype ||
+        !this.food.meal) {
+          this.fail = true;
+          this.clear();
+      } else {
+        this.sfood();
+      }
+    },
+        sfood() {
       http
         .post(
           "/food/"+
@@ -180,6 +196,8 @@ export default {
         
         .catch(e => {
           console.log(e);
+          this.fail = true;
+          this.clear();
         });
       
     },
