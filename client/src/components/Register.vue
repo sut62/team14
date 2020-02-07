@@ -21,7 +21,7 @@
               <v-row>
                 <v-col cols="12" sm="6">
                 <v-text-field
-                    id ="5"
+                    id ="name"
                     v-model="register.userName"
                     :items="userName"
                       item-text="addname"
@@ -32,7 +32,7 @@
         </v-col>
                 <v-col cols="12" sm="6">
                 <v-text-field
-                    id ="6"
+                    id ="lastname"
                     v-model="register.userLName"
                     :items="userLName"
                       item-text="addlastname"
@@ -44,7 +44,7 @@
       </v-row>
                 <v-row>    
                 <v-text-field
-                    id ="7"
+                    id ="age"
                     v-model="register.age"
                     :items="age"
                       item-text="addage"
@@ -56,7 +56,7 @@
             </v-row>
       <v-row>
                 <v-text-field
-                    id ="8"
+                    id ="telephone"
                     v-model="register.telephone"
                     :items="telephone"
                       item-text="telephone"
@@ -102,10 +102,10 @@
                   item-value="patientBed_id"
                 ><v-icon slot="prepend" color="black">mdi-hotel</v-icon></v-select>
             </v-row>
+                <v-alert type="error" dense close outlined v-model="alertFailed">กรุณาเลือกข้อมูลให้ครบทุกช่อง!</v-alert>
                 <v-row justify="center">
               <v-col cols="12">
                 <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก<v-icon right>mdi-content-save</v-icon></v-btn>
-                <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
                 <v-btn @click="viewRegister" style="margin-left: 15px;">ดูข้อมูลผู้ป่วย</v-btn>
                 <b-button style="margin-left: 15px;">
         </b-button>
@@ -150,7 +150,8 @@ export default {
       personnels:[],
       diseases:[],
       patientbeds:[],
-      valid: false
+      valid: false,
+      alertFailed: false
     };
   },
   methods: {
@@ -211,7 +212,26 @@ export default {
         });
     },
     saveRegister() {
-      http
+        if (
+        !this.register.personnelID ||
+        !this.register.userName ||
+        !this.register.age ||
+        !this.register.telephone||
+        !this.register.bloodtypeID||
+        !this.register.genderID||
+        !this.register.diseaseID||
+        !this.register.patientbedID
+      ) {
+        this.clearAlert();
+        this.alertFailed = true;
+        // alert("กรุณาเลือกข้อมูลให้ครบ!");
+        this.clear();
+      } else {
+        this.regis();
+      }
+    },
+        regis() {
+          http
         .post(
           "/register"+
            this.register.personnelID +
@@ -235,27 +255,22 @@ export default {
         )
         .then(response => {
           console.log(response);
-          this.register.personnelID = "";
-          this.register.userName = "";
-          this.register.userLName = "";
-          this.register.age = "";
-          this.register.telephone = "";
-          this.register.bloodtypeID = "";
-          this.register.genderID = "";
-          this.register.diseaseID = "";
-          this.register.patientbedID = "";
-        })
-        .then(response => {
-          console.log(response);
-          this.$refs.form.reset();
           this.$router.push('/viewregis');
+          this.clear();
         })
+        .catch(e => {
+          console.log(e);
+        });
+      this.submitted = true;
+    },
+    viewRegister(){
+      this.$router.push('/viewregis');
+    },
+    clearAlert() {
+      this.alertFailed = false;
     },
     clear() {
       this.$refs.form.reset();
-    },
-    viewRegister(){
-      this.$router.push("/viewregis");
     },
     refreshList() {
       this.getGenders();
@@ -267,6 +282,7 @@ export default {
 
     }
   },
+
   mounted() {
       this.getGenders();
       this.getBloodtypes();
