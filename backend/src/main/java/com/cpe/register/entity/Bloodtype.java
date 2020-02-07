@@ -9,7 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import java.util.Collection;
-
+import javax.validation.constraints.NotNull;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,7 +26,7 @@ public class Bloodtype{
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Bloodtype_SEQ")
     @Column(name="Bloodtype_ID",unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String blood_name;
+    @NotNull private  String blood_name;
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Register> regis;
 }
