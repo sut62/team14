@@ -84,7 +84,6 @@ export default {
                 console.log(this.items);
                 //this.$router.push('/findBed');
           } else {
-          alert('ไม่พบข้อมูล')
                 this.items = [];
                 console.log(this.items);
             this.$refs.form.reset();this.clear()
