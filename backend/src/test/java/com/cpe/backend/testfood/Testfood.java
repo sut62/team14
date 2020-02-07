@@ -1,4 +1,4 @@
-package com.cpe.backend;
+package com.cpe.backend.testfood;
 
 import com.cpe.backendfood.entity.*;
 import com.cpe.backendfood.repository.*;
