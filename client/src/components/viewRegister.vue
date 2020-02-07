@@ -20,7 +20,6 @@
 
 <script>
 import http from "../http-common";
-
 export default {
   name: "RegisterData",
   data() {
@@ -33,7 +32,7 @@ export default {
           value: "id"
         },
         { text: "ชื่อพนักงาน" , value: "createdby.fullname"},
-        { text: "ชื่อ", value: "addname"},
+        { text: "ชื่อผู้ป่วย", value: "fullname"},
         { text: "นามสกุล", value: "addlastname"},
         { text: "อายุ", value: "addage"},
         { text: "เบอร์โทรศัพท์", value: "telephone"},
