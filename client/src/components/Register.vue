@@ -102,7 +102,7 @@
                   item-value="patientBed_id"
                 ><v-icon slot="prepend" color="black">mdi-hotel</v-icon></v-select>
             </v-row>
-                <v-alert type="error" dense close outlined v-model="alertFailed">กรุณาเลือกข้อมูลให้ครบทุกช่อง!</v-alert>
+                <v-alert type="error" dense close outlined v-model="alertFailed">กรุณาใส่ข้อมูลให้ครบทุกช่อง!</v-alert>
                 <v-row justify="center">
               <v-col cols="12">
                 <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก<v-icon right>mdi-content-save</v-icon></v-btn>
@@ -224,7 +224,6 @@ export default {
       ) {
         this.clearAlert();
         this.alertFailed = true;
-        // alert("กรุณาเลือกข้อมูลให้ครบ!");
         this.clear();
       } else {
         this.regis();
