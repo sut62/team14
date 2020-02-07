@@ -16,6 +16,7 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 @Setter
 @Getter
@@ -29,7 +30,7 @@ public class PatientRoom {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="room_seq")
 	@Column(name="ROOM_ID",unique = true, nullable = true)
 	private @NonNull Long room_id;
-	private @NonNull String room_name;
+	private @NotNull String room_name;
 
 	@OneToMany(fetch = FetchType.EAGER)
 	// mappedBy  = "atRoom"

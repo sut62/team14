@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.validation.constraints.NotNull;
 
 
 @Setter
@@ -29,7 +30,7 @@ public class PhysicalBed {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="phys_seq")  
     @Column(name = "PHYSICALBED_ID", unique = true, nullable = true)
     private @NonNull Long physBed_id;
-    private @NonNull String physBed_name;
+    private @NotNull String physBed_name;
 
     @OneToMany(fetch = FetchType.EAGER)
     // mappedBy  = "physicalBed"
