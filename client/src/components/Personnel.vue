@@ -5,13 +5,17 @@
  max-width="800"
     class="mx-auto"
   >
+       <div
+         v-if="saveStatus.isFail" style="border: 1px solid #FFA879; border-radius: 5px; background-color: #FFD6B2; align-items: center">
+          <div style="padding: 15px; color: #733600">{{saveStatus.message}}</div>
+        </div>
+
     <v-layout text-center wrap>
       <v-flex >
-       
         <h1 class="display-2 font-weight-bold mb-3">MangePersonnel</h1>
       </v-flex>
     </v-layout>
-
+            
     <v-row justify="center">
       <v-col cols="10">
         <v-form v-model="valid" ref="form" >
@@ -19,7 +23,6 @@
           <v-row>
             <v-col cols="5">
              <v-text-field
-              
                 outlined
                 id ="1"
                 label="FirstName"
@@ -144,14 +147,11 @@
       </v-menu>
             <v-row justify="center">
               <v-col cols="12">
-                <v-btn
-          type="button"
-          class="swal2-confirm swal2-styled"
-          @click="savePersonnel" :class="{ red: !valid, green: valid }"
-        >submit</v-btn>
-                <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
+                <v-btn color="red" style="margin-left: 15px;" @click="savePersonnel">submit</v-btn>
+                <v-btn color="blue " style="margin-left: 15px; " @click="clear">clear</v-btn>
                 <b-button style="margin-left: 15px;">
-                <router-link to="/viewpersonnel"><v-btn color="blue lighten-5">SHOWPERSONNEL</v-btn></router-link>
+                <router-link to="/viewpersonnel"><v-btn color="green">SHOWPERSONNEL</v-btn></router-link>
+                <flash-message class="savePersonnel"></flash-message>
         </b-button>
               </v-col>
             </v-row>
@@ -186,7 +186,12 @@ export default {
       positions:[],
       maritalstatuss:[],
       educationlevels:[],
-      valid: false
+      valid: false,
+
+       saveStatus: {
+        isFail: false,
+        message: ""
+      }
     };
   },
   methods: {
@@ -247,14 +252,17 @@ export default {
           
         )
         .then(response => {
-          console.log(response);
-          this.$refs.form.reset();
-          this.$router.push('/viewpersonnel');
+          if (response) {
+            this.$router.push('/viewpersonnel');
+          } else {
+            this.saveStatus.isFail = true
+          }
         })
-        .catch(e => {
-          console.log(e);
-        });
-      this.submitted = true;
+        .catch(() => {
+          this.saveStatus.message = "บันทึกข้อมูลไม่สำเร็จ"
+          this.saveStatus.isFail = true
+        })
+         this.$refs.form.reset();
     },
     clear() {
       this.$refs.form.reset();
