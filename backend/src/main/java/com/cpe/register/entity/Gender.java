@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.FetchType;
-
+import javax.validation.constraints.NotNull;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -28,7 +28,7 @@ public class Gender {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Gender_seq")  
     @Column(name="Gender_ID", unique = true, nullable = true)
     private @NonNull Long id;
-    private @NonNull String gen_name;
+    private @NotNull String gen_name;
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Register> regis;
 }
