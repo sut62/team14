@@ -17,6 +17,10 @@
                   <v-alert type="error"> ใส่ข้อมูลไม่ถูกต้อง  </v-alert>
                 </div>
 
+                <div v-if="success">
+                  <v-alert type="success"> save success!  </v-alert>
+                </div>
+
           <div>
           <v-row>
             <v-col cols="10">
@@ -88,7 +92,6 @@
                 <v-btn @click="saveFood" :class="{ red: !valid, green: valid }">save</v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
                 <router-link to="/viewFood"><v-btn class="ma-2" outlined color="blue darken-1">Show</v-btn></router-link>
-                <router-link to="/Em2"><v-btn class="ma-2" outlined color="blue darken-1">Back</v-btn></router-link>
       
               </v-col>
             </v-row>
@@ -125,6 +128,7 @@ export default {
       Meals:[],
       valid: false,
       fail: false,
+      success: false,
     };
   },
   methods: {
@@ -164,18 +168,6 @@ export default {
     },
 
     saveFood() {
-        if (
-        !this.food.Name ||
-        !this.food.personnel ||
-        !this.food.foodtype ||
-        !this.food.meal) {
-          this.fail = true;
-          this.clear();
-      } else {
-        this.sfood();
-      }
-    },
-        sfood() {
       http
         .post(
           "/food/"+
@@ -191,19 +183,24 @@ export default {
         .then(response => {
           console.log(response);
           this.$refs.form.reset();
-          this.$router.push('/viewFood');
+          this.success = true;
+          this.fail = false;
         })
         
         .catch(e => {
           console.log(e);
           this.fail = true;
-          this.clear();
+           this.success = false;
+          this.$refs.form.reset();
         });
       
     },
     
     clear() {
       this.$refs.form.reset();
+      this.success = false;
+      this.fail = false;
+      
     },
     refreshList() {
       this.getPersonnels();
