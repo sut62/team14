@@ -169,12 +169,22 @@
               </v-col>
             </v-row>
 
+             <v-row justify ="center">
+                <div v-if="validData">
+
+                <v-alert dense border="left" type="warning">
+                    Please check all information before saving!! 
+                </v-alert>
+
+                </div>
+             </v-row>
+
 
             <!-- Button Save/Cancle-->
               <v-col cols="100"  >
                 <div class="text-right">
                         <v-btn    @click="savePatientBed" :class="{ green: !valid, teal : valid }" class="white--text  " >save</v-btn>
-                        <v-btn style="margin-left :10px;" @click="clear"  :class="{ grey: !valid, brown   : valid }" class="white--text  " >cancle</v-btn> 
+                        <v-btn style="margin-left :10px;" @click="clearAll"  :class="{ grey: !valid, brown   : valid }" class="white--text  " >cancle</v-btn> 
                         <b-button style="margin-left :10px;">
                             <router-link to="/ViewBedData"><v-btn color="pink lighten-3"  class="white--text">View Data</v-btn></router-link>
                         </b-button>
@@ -205,7 +215,7 @@ export default {
       patientZones:[],
       patientRooms:[],
       physicalBeds:[],
-
+      validData: false,
        loading: false,
       selection: 1,
      valid: false,
@@ -268,6 +278,7 @@ export default {
     // function เมื่อกดปุ่ม submit
     savePatientBed() {
       http
+      //if not true then go catch
         .post(
           "/patientBed/" +this.patientBed.personnelId +
           "/" +
@@ -291,6 +302,8 @@ export default {
         })
         .catch(e => {
           console.log(e);
+          this.validData=true;
+          this.clear();
         });
        
      
@@ -302,6 +315,15 @@ export default {
         this.patientBed.patientRoomId = "";
         this.patientBed.physicalBedId = "";
         this.patientBed.detail = "";
+    },
+      clearAll() {
+  
+        this.patientBed.personnelId = "";
+        this.patientBed.patientZoneId = "";
+        this.patientBed.patientRoomId = "";
+        this.patientBed.physicalBedId = "";
+        this.patientBed.detail = "";
+        this.validData=false;
     }
     /* eslint-enable no-console */
    
