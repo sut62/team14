@@ -81,17 +81,26 @@
 
             <v-row >
             <div v-if="dataNull">
-            <v-col cols="10">
+
             <v-alert dense border="left" type="warning">
                  กรุณาใส่ข้อมูลให้ครบและถูกต้อง
             </v-alert>
-            </v-col>
+
+            </div>
+            </v-row>
+            <v-row >
+            <div v-if="success">
+
+            <v-alert type="success">
+                  save success!
+            </v-alert>
+
             </div>
             </v-row>
             <v-row justify="center">
                 <v-col cols="12">
                     <v-btn @click="saveOrder" :class="{ red: !valid, green: valid }">save</v-btn>
-                    <v-btn style="margin-left: 15px;" @click="clear">clear</v-btn>
+                    <v-btn style="margin-left: 15px;" @click="clearAll">clear</v-btn>
                     <b-button><router-link to="/vieworder"><v-btn color="blue" style="margin-left: 15px;" >show</v-btn></router-link></b-button>
                 </v-col>
              </v-row>
@@ -118,6 +127,7 @@ export default {
         details:""
       },
       dataNull: false,
+      success: false,
       food:[],
       patient:[],
       employee:[]
@@ -173,7 +183,7 @@ export default {
             !this.orderFood.emId ||
             !this.orderFood.details) {
                 this.dataNull = true;
-                // alert("กรุณาเลือกข้อมูลให้ครบ!");
+                this.success = false;
                 this.clear();
         } else {
             http
@@ -188,8 +198,9 @@ export default {
                   this.orderFood.details)
               .then(response => {
                   console.log(response);
+                  this.success = true;
+                  this.dataNull = false;
                   this.clear();
-                  this.$router.push('/vieworder');
                   })
               .catch(e => {
                   console.log(e);
@@ -199,6 +210,11 @@ export default {
     },
     clear() {
       this.$refs.form.reset();
+    },
+    clearAll() {
+      this.$refs.form.reset();
+      this.dataNull = false;
+      this.success = false;
     },
     refreshList() {
       this.getMovies();
