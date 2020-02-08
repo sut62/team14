@@ -102,7 +102,16 @@
                   item-value="patientBed_id"
                 ><v-icon slot="prepend" color="black">mdi-hotel</v-icon></v-select>
             </v-row>
-                <v-alert type="error" dense close outlined v-model="alertFailed">กรุณาใส่ข้อมูลให้ครบทุกช่อง!</v-alert>
+            <v-row >
+            <v-col cols="12">
+            <div v-if="alertFailed">
+            <v-alert type="error" dense outlined>กรุณาใส่ข้อมูลให้ครบและถูกต้อง!!</v-alert></div></v-col>
+            </v-row>
+            <v-row >
+            <v-col cols="12">
+            <div v-if="alertSuccess">
+            <v-alert type="success" dense outlined>บันทึกข้อมูลสำเร็จ</v-alert></div></v-col>
+            </v-row>
                 <v-row justify="center">
               <v-col cols="12">
                 <v-btn @click="saveRegister" class="mr-3" color="orange">บันทึก<v-icon right>mdi-content-save</v-icon></v-btn>
@@ -125,7 +134,6 @@
 
 <script>
 import http from "../http-common";
-
 export default {
   name: "register",
   data() {
@@ -151,7 +159,8 @@ export default {
       diseases:[],
       patientbeds:[],
       valid: false,
-      alertFailed: false
+      alertFailed: false,
+      alertSuccess : false
     };
   },
   methods: {
@@ -224,13 +233,10 @@ export default {
       ) {
         this.clearAlert();
         this.alertFailed = true;
+        this.alertSuccess = false;
         this.clear();
       } else {
-        this.regis();
-      }
-    },
-        regis() {
-          http
+        http
         .post(
           "/register"+
            this.register.personnelID +
@@ -252,21 +258,27 @@ export default {
             this.register.patientbedID,
           this.register
         )
-        .then(response => {
-          console.log(response);
-          this.$router.push('/viewregis');
-          this.clear();
-        })
-        .catch(e => {
-          console.log(e);
-        });
-      this.submitted = true;
+      .then(response => {
+                  console.log(response);
+                  this.alertSuccess = true;
+                  this.alertFailed = false;
+                  this.clear();
+                  })
+              .catch(e => {
+                  console.log(e);
+                  this.alertFailed = true;
+                  this.alertSuccess = false;
+                   });
+              }
+
     },
     viewRegister(){
       this.$router.push('/viewregis');
     },
     clearAlert() {
+      this.$refs.form.reset();
       this.alertFailed = false;
+      this.alertSuccess = false;
     },
     clear() {
       this.$refs.form.reset();
@@ -277,20 +289,15 @@ export default {
       this.getPersonnels();
       this.getDiseases();
       this.getPatientBeds();
-
-
     }
   },
-
   mounted() {
       this.getGenders();
       this.getBloodtypes();
       this.getPersonnels();
       this.getDiseases();
       this.getPatientBeds();
-
       
-
   }
 };
 </script>
