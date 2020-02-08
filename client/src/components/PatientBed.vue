@@ -278,6 +278,7 @@ export default {
     // function เมื่อกดปุ่ม submit
     savePatientBed() {
       http
+      //if not true then go catch
         .post(
           "/patientBed/" +this.patientBed.personnelId +
           "/" +
