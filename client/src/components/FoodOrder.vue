@@ -182,7 +182,6 @@ export default {
             !this.orderFood.bedId ||
             !this.orderFood.emId ||
             !this.orderFood.details) {
-                this.clearAlert();
                 this.dataNull = true;
                 this.success = false;
                 this.clear();
