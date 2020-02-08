@@ -6,7 +6,11 @@
     class="mx-auto"
   >
        <div
-         v-if="saveStatus.isFail" style="border: 1px solid #FFA879; border-radius: 5px; background-color: #FFD6B2; align-items: center">
+         v-if="saveStatus.Fail" style="border: 1px solid #FFA879; border-radius: 5px; background-color: #FFD6B2; align-items: center">
+          <div style="padding: 15px; color: #733600">{{saveStatus.message}}</div>
+        </div>
+        <div
+         v-if="saveStatus.success" style="border: 1px solid #FFA879; border-radius: 5px; background-color: #FFD6B2; align-items: center">
           <div style="padding: 15px; color: #733600">{{saveStatus.message}}</div>
         </div>
 
@@ -189,7 +193,9 @@ export default {
       valid: false,
 
        saveStatus: {
-        isFail: false,
+        success: false,
+        Fail: false,
+        clear: false,
         message: ""
       }
     };
@@ -253,19 +259,28 @@ export default {
         )
         .then(response => {
           if (response) {
-            this.$router.push('/viewpersonnel');
+            this.saveStatus.success = true
+            this.saveStatus.message = "บันทึกข้อมูลสำเร็จ"
+            setTimeout(this.saveStatus.Fail = true,
+                       this.saveStatus.Fail =""  ,() => {
+                    }, )
           } else {
-            this.saveStatus.isFail = true
+            this.saveStatus.Fail = true
           }
         })
         .catch(() => {
           this.saveStatus.message = "บันทึกข้อมูลไม่สำเร็จ"
-          this.saveStatus.isFail = true
+          this.saveStatus.Fail = true
+           setTimeout(this.saveStatus.success = true,
+           this.saveStatus.success ="" ,() => {
+                    },)
         })
          this.$refs.form.reset();
     },
     clear() {
       this.$refs.form.reset();
+      this.saveStatus.clear = false
+      
     },
     refreshList() {
       this.getMaritalstatuss();
