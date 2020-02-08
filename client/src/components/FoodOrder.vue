@@ -204,6 +204,8 @@ export default {
                   })
               .catch(e => {
                   console.log(e);
+                  this.dataNull = true;
+                  this.success = false;
                    });
               }
 
