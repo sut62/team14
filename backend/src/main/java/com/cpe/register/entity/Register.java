@@ -42,9 +42,7 @@ public class Register {
     private Integer addage;
     @Pattern(regexp = "\\d{10}")
     private @NonNull String telephone;
-    private @NonNull String fullname;
    
-
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Gender.class)
     @JoinColumn(name = "Gender_ID", insertable = true)
     private Gender gendername;

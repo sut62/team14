@@ -31,8 +31,10 @@ export default {
           sortable: false,
           value: "id"
         },
-        { text: "ชื่อพนักงาน" , value: "createdby.fullname"},
-        { text: "ชื่อผู้ป่วย", value: "fullname"},
+        { text: "ชื่อพนักงาน" , value: "createdby.firstname"},
+        { text: "นามสกุลพนักงาน" , value: "createdby.lastname"},
+        { text: "ชื่อผู้ป่วย", value: "addname"},
+        { text: "นามสกุลผู้ป่วย" , value: "addlastname"},
         { text: "อายุ", value: "addage"},
         { text: "เบอร์โทรศัพท์", value: "telephone"},
         { text: "เพศ", value: "gendername.gen_name" },
@@ -40,7 +42,9 @@ export default {
         { text: "โรคของผู้ป่วย", value: "desname.name" },
         { text: "เตียงผู้ป่วย", value: "patname.show" }
       ],
-      items: []
+      items: [{
+
+      }],
     };
   },
   methods: {
@@ -50,6 +54,7 @@ export default {
         .get("/register")
         .then(response => {
           this.items = response.data;
+
           console.log(this.items);
         })
         .catch(e => {
@@ -67,5 +72,6 @@ export default {
   mounted() {
     this.getRegister();
   }
+  
 };
 </script>

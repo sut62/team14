@@ -15,7 +15,7 @@
                   outlined
                   v-model="register.personnelID"
                   :items="personnels"
-                  item-text="fullname"
+                  :item-text="personnels => personnels.firstname + ' ' + personnels.lastname"
                   item-value="id"
                 ></v-select>
               <v-row>
