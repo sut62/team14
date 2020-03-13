@@ -39,7 +39,7 @@
                   outlined
                   v-model="orderFood.bedId"
                   :items="patient"
-                  item-text="fullname"
+                  :item-text="patient => patient.addname + ' ' + patient.addlastname"
                   item-value="id"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
@@ -55,7 +55,7 @@
                        outlined
                        v-model="orderFood.emId"
                        :items="employee"
-                       item-text="fullname"
+                       :item-text="employee => employee.firstname + ' ' + employee.lastname"
                        item-value="id"
                        :rules="[(v) => !!v || 'Item is required']"
                        required
@@ -63,6 +63,7 @@
                     </v-select>
                  </v-col>
               </v-row>
+              
 
              <v-row >
 
