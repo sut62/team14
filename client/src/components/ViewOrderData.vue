@@ -37,8 +37,10 @@ export default {
           value: "id"
         },
         { text: "อาหารที่สั่ง", value: "food.name"},
-        { text: "ชื่อของผู้ป่วยที่ต้องรับ", value: "patient.fullname" },
-        { text: "ผู้สั่ง", value: "orderBy.fullname" },
+        { text: "ชื่อของผู้ป่วย", value: "patient.addname" },
+        { text: "นามสกุลของผู้ป่วย", value: "patient.addlastname" },
+        { text: "ชื่อผู้สั่ง", value: "orderBy.firstname" },
+        { text: "นามสกุลผู้สั่ง", value: "orderBy.lastname" },
         { text: "รายละเอียด", value: "details" }
       ],
       items: []
