@@ -72,7 +72,7 @@
                   background-color="lime lighten-3"
                   v-model="disease.personnelID"
                   :items="personnels"
-                  item-text="fullname"
+                  item-text="firstname"
                   item-value="id"
                   
                 > <v-icon slot="prepend" color="red">mdi-account-check</v-icon></v-select>
