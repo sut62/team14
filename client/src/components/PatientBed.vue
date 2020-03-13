@@ -212,6 +212,7 @@ export default {
         detail: ""
       },
       personnels:[],
+      
       patientZones:[],
       patientRooms:[],
       physicalBeds:[],
