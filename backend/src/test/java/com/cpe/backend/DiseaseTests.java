@@ -336,4 +336,100 @@ public class DiseaseTests {
         assertEquals("must not be null", v.getMessage());
         assertEquals("personnel", v.getPropertyPath().toString());
     }
+    @Test
+    void b6001414_testNameLessthan51Char() {
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+        
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+
+        Disease disease = new Disease();
+        disease.setName("01234567890123456789012345678901234567890123456789a");
+        disease.setSymptom("Sudden high fever Sudden high fever");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        Set<ConstraintViolation<Disease>> result = validator.validate(disease);
+
+        assertEquals(1, result.size());
+
+        ConstraintViolation<Disease> v = result.iterator().next();
+        assertEquals("size must be between 2 and 50", v.getMessage());
+        assertEquals("name", v.getPropertyPath().toString());
+    }
+
+
+@Test
+    void b6001414_testSymtomMatchPattern() {
+        Type type = new Type();
+        type.setType("ติดต่อ");
+        type = typeRepository.saveAndFlush(type);
+
+        LifeSpan lifespan = new LifeSpan();
+        lifespan.setAge("วัยรุ่น");
+        lifespan = lifeSpanRepository.saveAndFlush(lifespan);
+        
+        Educationlevel level = new Educationlevel();
+        level.setEducationlevel_name("Bachelor of Arts");
+        level = educationlevelRepository.saveAndFlush(level);
+
+        Maritalstatus status = new Maritalstatus();
+        status.setMaritalstatus_name("single");
+        status = maritalstatusRepository.saveAndFlush(status);
+        
+        Position posit = new Position();
+        posit.setPosition_name("Doctor");
+        posit = positionRepository.saveAndFlush(posit);
+
+        Personnel personnel = new Personnel();
+        personnel.setFirstname("sopon");
+        personnel.setLastname("phudee");
+        personnel.setTelephone("0856845611");
+        personnel.setPassword("12345648790");
+        personnel.setBirthday(LocalDate.parse("1999-01-29"));
+        personnel.setStatus(status);
+        personnel.setPosit(posit);
+        personnel.setLevel(level);
+        personnel = personnelRepository.saveAndFlush(personnel);
+
+        Disease disease = new Disease();
+        disease.setName("Dengue Fever");
+        disease.setSymptom("*-+");
+        disease.setType(type);
+        disease.setLifespan(lifespan);
+        disease.setPersonnel(personnel);
+        Set<ConstraintViolation<Disease>> result = validator.validate(disease);
+
+        assertEquals(1, result.size());
+
+        ConstraintViolation<Disease> v = result.iterator().next();
+        assertEquals("must match \"[[ก-๙][ ]A-Za-z0-9]*\"", v.getMessage());
+        assertEquals("symptom", v.getPropertyPath().toString());
+    }
 }

@@ -16,6 +16,7 @@ import javax.persistence.FetchType;
 import com.cpe.personnel.entity.Personnel;
 import com.cpe.register.entity.Register;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Data
@@ -32,11 +33,12 @@ public class Disease {
 
     //@Column(unique = true, nullable = true)
     @NotNull
-    @Size(min = 1, max = 70)
+    @Size(min = 2, max = 50)
     private String name;
 
     //@Column(nullable = true)
     @NotNull
+    @Pattern(regexp = "[[ก-๙][ ]A-Za-z0-9]*")
     private String symptom;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Type.class)
