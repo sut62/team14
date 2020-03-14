@@ -53,7 +53,6 @@ public class Personnel {
     @NotNull
     @Size(min = 2 ,max = 100)
     private  String password;
-    private @NonNull String fullname;
     
 
    

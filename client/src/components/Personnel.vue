@@ -111,7 +111,7 @@
                   item-value="id"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
-                ><v-icon slot="prepend" color="black" >mdi-library-books</v-icon></v-select>
+                ><v-icon slot="prepend" color="black" >mdi-book</v-icon></v-select>
               </v-col>
             </v-row>
             <v-row>

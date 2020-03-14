@@ -83,8 +83,7 @@ public class PersonnelController {
     LocalDate born = LocalDate.parse(addbirthday);                    
     Maritalstatus status = maritalstatusRepository.findById(maritalstatus_id); 
     Position posit = positionRepository.findById(position_id);                                            
-    Educationlevel level = educationlevelRepository.findById(educationlevel_id);      
-    String fullname =  "  " +addfirstname+"  "+ addlastname;                     
+    Educationlevel level = educationlevelRepository.findById(educationlevel_id);                          
     
     newPersonnel.setFirstname(addfirstname);
     newPersonnel.setLastname(addlastname);
@@ -94,7 +93,6 @@ public class PersonnelController {
     newPersonnel.setStatus(status);
     newPersonnel.setPosit(posit);
     newPersonnel.setLevel(level);
-    newPersonnel.setFullname(fullname);
     return personnelRepository.save(newPersonnel);
     
     }
