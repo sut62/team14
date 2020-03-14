@@ -100,7 +100,7 @@
                   :items="patientbeds"
                   item-text="show"
                   item-value="patientBed_id"
-                ><v-icon slot="prepend" color="black">mdi-hotel</v-icon></v-select>
+                ><v-icon slot="prepend" color="black">mdi-scale-bathroom</v-icon></v-select>
             </v-row>
             <v-row >
             <v-col cols="12">
