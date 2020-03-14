@@ -35,7 +35,8 @@ export default {
           value: "id"
         },
         { text: "ชื่ออาหาร", value: "name"},
-        { text: "ชื่อพนักงาน", value: "createdby.fullname"},
+        { text: "ชื่อพนักงาน" , value: "createdby.firstname"},
+        { text: "นามสกุลพนักงาน" , value: "createdby.lastname"},
         { text: "ประเภทอาหาร", value: "typeby.type"},
         { text: "มื้ออาหาร", value: "mealby.mealtype"}
       ],
