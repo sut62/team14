@@ -32,9 +32,6 @@ export default {
           value: "id"
         },
         { text: "รหัสพนักงาน" , value: "createdby.id"},
-        //{ text: "ชื่อพนักงาน" ,align: "right", value: "createdby.firstname"},
-        //{ sortable: false,align: "left", value: "createdby.lastname"},
-        { text: "ชื่อผู้ป่วย", value: "addname"},
         { text: "นามสกุลผู้ป่วย", value: "addlastname"},
         { text: "อายุ", value: "addage"},
         { text: "เบอร์โทรศัพท์", value: "telephone"},
