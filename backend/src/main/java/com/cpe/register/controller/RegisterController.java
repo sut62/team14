@@ -38,7 +38,7 @@ import com.cpe.patientBed.repository.PatientBedRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://172.17.0.202:8081")
 @RestController
 public class RegisterController {
     @Autowired

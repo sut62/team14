@@ -38,7 +38,7 @@ import com.cpe.personnel.repository.PersonnelRepository;
 
 
 import java.time.LocalDate;
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://172.17.0.200:8081")
 @RestController
 public class FoodController {
     @Autowired
